@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arya Mototech - TVS Authorized Dealer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <style>
+        .hero-bg {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+        }
+
+        .gallery-bg {
+            background: linear-gradient(135deg, #ef5350 0%, #f44336 100%);
+        }
+
+        .swiper {
+            width: 100%;
+            height: 100%;
+        }
+
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: transparent;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .swiper-pagination-bullet {
+            background: #ef4444 !important;
+            opacity: 0.5 !important;
+            width: 12px !important;
+            height: 12px !important;
+        }
+
+        .swiper-pagination-bullet-active {
+            opacity: 1 !important;
+            background: #dc2626 !important;
+        }
+
+        .products-swiper .swiper-slide {
+            height: auto;
+        }
+
+        .products-swiper .swiper-pagination {
+            position: relative;
+            margin-top: 2rem;
+        }
+
+        .achievements-swiper .swiper-pagination {
+            position: relative;
+            margin-top: 2rem;
+        }
+
+        .achievements-swiper .swiper-pagination-bullet {
+            background: #ef4444 !important;
+        }
+
+        .gallery-swiper .swiper-pagination-bullet {
+            background: white !important;
+        }
+
+        /* Make product cards wider */
+        .product-card {
+            width: 100%;
+            max-width: 380px;
+            margin: 0 auto;
+        }
+
+        /* Custom swiper styles */
+        .products-swiper {
+            width: 100%;
+            padding-bottom: 40px;
+        }
+
+        .swiper-pagination-bullet {
+            width: 12px;
+            height: 12px;
+            background: #ccc;
+            opacity: 1;
+        }
+
+        .swiper-pagination-bullet-active {
+            background: #3b82f6;
+        }
+
+        @media (min-width: 768px) {
+            .products-swiper {
+                width: 90%;
+                margin: 0 auto;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .products-swiper {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="text-2xl font-bold text-red-500">
+                    <span class="text-blue-900">Arya</span><span class="text-red-500">Mototech</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-red-500 transition">Home</a>
+                    <a href="#about" class="text-gray-700 hover:text-red-500 transition">About</a>
+                    <a href="#products" class="text-gray-700 hover:text-red-500 transition">Products</a>
+                    <a href="#gallery" class="text-gray-700 hover:text-red-500 transition">Gallery</a>
+                    <a href="#achievements" class="text-gray-700 hover:text-red-500 transition">Achievements</a>
+                    <a href="#contact" class="text-gray-700 hover:text-red-500 transition">Contact</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-gray-700">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="px-4 py-2 space-y-2">
+                <a href="#home" class="block text-gray-700 hover:text-red-500 py-2">Home</a>
+                <a href="#about" class="block text-gray-700 hover:text-red-500 py-2">About</a>
+                <a href="#products" class="block text-gray-700 hover:text-red-500 py-2">Products</a>
+                <a href="#gallery" class="block text-gray-700 hover:text-red-500 py-2">Gallery</a>
+                <a href="#achievements" class="block text-gray-700 hover:text-red-500 py-2">Achievements</a>
+                <a href="#contact" class="block text-gray-700 hover:text-red-500 py-2">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg min-h-screen flex items-center pt-20">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">
+                <span class="text-blue-900">RIDE INTO THE FUTURE</span>
+                <span class="text-red-500 block">WITH THE TVS RANGE</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-700 mb-8 max-w-4xl mx-auto">
+                <strong>AryaMototech, Berhampur</strong> is the Authorized Dealer of TVS Motor Company for two-wheelers,
+                specializing in sales, service, and spare parts.
+            </p>
+            <div class="mt-12">
+                <img src="images/landing.png" alt="TVS Motorcycle Range" class="mx-auto rounded-lg shadow-lg">
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <img src="images/buildingbike.png" alt="Arya Mototech Showroom" class="rounded-lg shadow-lg">
+                </div>
+                <div>
+                    <h2 class="text-red-500 text-lg font-semibold mb-2">WELCOME TO</h2>
+                    <h3 class="text-4xl font-bold text-blue-900 mb-6">ARYA MOTOTECH</h3>
+                    <p class="text-gray-700 text-lg leading-relaxed">
+                        <strong>AryaMototech, Berhampur</strong> is the Authorized Dealer of TVS Motor Company for
+                        two-wheelers, specializing in sales, service, and spare parts. Our mission is to offer a
+                        comprehensive range of TVS products and services to our customers with a commitment to honesty,
+                        ethics, and transparency. We strive to deliver exceptional service and ensure a seamless
+                        experience for all our customers.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-12 md:py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 md:mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-red-500 mb-3 md:mb-4">OUR PRODUCTS</h2>
+                <div class="w-20 md:w-24 h-1 bg-gray-400 mx-auto mb-4 md:mb-6"></div>
+                <p class="text-lg md:text-xl text-gray-700 max-w-2xl mx-auto">Check out our range of bikes with exciting
+                    features and latest technology.</p>
+            </div>
+
+            <!-- Product Categories -->
+            <div class="flex flex-wrap justify-center gap-3 md:gap-4 mb-8 md:mb-12 px-2">
+                <button
+                    class="category-btn active bg-blue-900 text-white px-4 py-2 md:px-6 md:py-3 border-2 border-blue-900 rounded-lg font-semibold hover:bg-blue-900 hover:text-white transition text-sm md:text-base"
+                    data-category="all">All</button>
+                <button
+                    class="category-btn px-4 py-2 md:px-6 md:py-3 border-2 border-blue-900 text-blue-900 rounded-lg font-semibold hover:bg-blue-900 hover:text-white transition text-sm md:text-base"
+                    data-category="scooters">Scooters</button>
+                <button
+                    class="category-btn px-4 py-2 md:px-6 md:py-3 border-2 border-blue-900 text-blue-900 rounded-lg font-semibold hover:bg-blue-900 hover:text-white transition text-sm md:text-base"
+                    data-category="motorcycles">Motorcycles</button>
+                <button
+                    class="category-btn px-4 py-2 md:px-6 md:py-3 border-2 border-blue-900 text-blue-900 rounded-lg font-semibold hover:bg-blue-900 hover:text-white transition text-sm md:text-base"
+                    data-category="mopeds">Mopeds</button>
+                <button
+                    class="category-btn px-4 py-2 md:px-6 md:py-3 border-2 border-blue-900 text-blue-900 rounded-lg font-semibold hover:bg-blue-900 hover:text-white transition text-sm md:text-base"
+                    data-category="electric">Electric</button>
+            </div>
+
+            <!-- Products Swiper -->
+            <div class="swiper products-swiper px-2 md:px-0">
+                <div class="swiper-wrapper pb-10 md:pb-12">
+                    <!-- TVS iQube Electric -->
+                    <div class="swiper-slide flex justify-center">
+                        <div class="product-card w-full max-w-xs sm:max-w-sm md:w-[380px] h-full bg-white rounded-lg shadow-lg overflow-hidden flex flex-col justify-between"
+                            data-category="electric">
+                            <div class="p-6 md:p-8 flex-grow">
+                                <div class="text-center mb-4 md:mb-6">
+                                    <h4 class="text-xs md:text-sm font-bold text-gray-600">TVS</h4>
+                                    <h3 class="text-2xl md:text-3xl font-bold text-blue-600">iQube</h3>
+                                    <h4 class="text-lg md:text-xl font-bold text-blue-600">ELECTRIC</h4>
+                                </div>
+                                <div class="text-center mb-4 md:mb-6">
+                                    <span class="text-xs md:text-sm text-gray-600">Top Speed*</span>
+                                    <div class="text-2xl md:text-3xl font-bold text-gray-800">82</div>
+                                    <span class="text-gray-600 text-xs md:text-sm">km/h</span>
+                                </div>
+                                <img src="images/iq.png" alt="TVS IQube Electric"
+                                    class="w-full h-48 md:h-56 object-contain mb-4 md:mb-6">
+                                <h5 class="text-xl md:text-2xl font-bold text-center mb-4 md:mb-6">TVS IQube</h5>
+                            </div>
+                            <a href="formfillup.php"
+                                class="w-full bg-red-500 text-white py-3 md:py-4 rounded-b-lg font-semibold hover:bg-red-600 transition text-base md:text-lg">GET
+                                A QUOTE </a>
+                        </div>
+                    </div>
+
+                    <!-- TVS XL 100 -->
+                    <div class="swiper-slide flex justify-center">
+                        <div class="product-card w-full max-w-xs sm:max-w-sm md:w-[380px] h-full bg-white rounded-lg shadow-lg overflow-hidden flex flex-col justify-between"
+                            data-category="mopeds">
+                            <div class="p-6 md:p-8 flex-grow">
+                                <div class="text-center mb-4 md:mb-6">
+                                    <h4 class="text-xs md:text-sm font-bold text-gray-600">TVS</h4>
+                                    <h3 class="text-2xl md:text-3xl font-bold text-red-600">XL100</h3>
+                                    <h4 class="text-lg md:text-xl font-bold text-gray-600">i-TOUCH START</h4>
+                                </div>
+                                <div class="text-center mb-4 md:mb-6">
+                                    <span class="text-2xl md:text-3xl font-bold text-red-500">15%</span>
+                                    <span class="text-xs md:text-sm text-red-500 block">MORE MILEAGE*</span>
+                                </div>
+                                <img src="images/xl.png" alt="TVS XL 100"
+                                    class="w-full h-48 md:h-56 object-contain mb-4 md:mb-6">
+                                <h5 class="text-xl md:text-2xl font-bold text-center mb-4 md:mb-6">TVS XL 100</h5>
+                            </div>
+                            <button
+                                class="w-full bg-red-500 text-white py-3 md:py-4 rounded-b-lg font-semibold hover:bg-red-600 transition text-base md:text-lg">GET
+                                A QUOTE</button>
+                        </div>
+                    </div>
+
+                    <!-- TVS Sport -->
+                    <div class="swiper-slide flex justify-center">
+                        <div class="product-card w-full max-w-xs sm:max-w-sm md:w-[380px] h-full bg-white rounded-lg shadow-lg overflow-hidden flex flex-col justify-between"
+                            data-category="motorcycles">
+                            <div class="p-6 md:p-8 flex-grow">
+                                <div class="text-center mb-4 md:mb-6">
+                                    <h4 class="text-xs md:text-sm font-bold text-gray-600">TVS</h4>
+                                    <h3 class="text-2xl md:text-3xl font-bold text-red-600">Sport</h3>
+                                    <h4 class="text-lg md:text-xl font-bold text-gray-600">MILEAGE KA BAAP</h4>
+                                </div>
+                                <img src="images/tvssoirt.png" alt="TVS Sport"
+                                    class="w-full h-48 md:h-56 object-contain mb-4 md:mb-6">
+                                <h5 class="text-xl md:text-2xl font-bold text-center mb-4 md:mb-6">TVS Sport</h5>
+                            </div>
+                            <button
+                                class="w-full bg-red-500 text-white py-3 md:py-4 rounded-b-lg font-semibold hover:bg-red-600 transition text-base md:text-lg">GET
+                                A QUOTE</button>
+                        </div>
+                    </div>
+
+                    <!-- TVS Zest 110 -->
+                    <div class="swiper-slide flex justify-center">
+                        <div class="product-card w-full max-w-xs sm:max-w-sm md:w-[380px] h-full bg-white rounded-lg shadow-lg overflow-hidden flex flex-col justify-between"
+                            data-category="scooters">
+                            <div class="p-6 md:p-8 flex-grow">
+                                <div class="text-center mb-4 md:mb-6">
+                                    <h4 class="text-xs md:text-sm font-bold text-gray-600">TVS</h4>
+                                    <h3 class="text-2xl md:text-3xl font-bold text-blue-600">Zest</h3>
+                                    <h4 class="text-lg md:text-xl font-bold text-gray-600">110</h4>
+                                </div>
+                                <img src="images/tvszest.png" alt="TVS Zest 110"
+                                    class="w-full h-48 md:h-56 object-contain mb-4 md:mb-6">
+                                <h5 class="text-xl md:text-2xl font-bold text-center mb-4 md:mb-6">TVS Zest 110</h5>
+                            </div>
+                            <button
+                                class="w-full bg-red-500 text-white py-3 md:py-4 rounded-b-lg font-semibold hover:bg-red-600 transition text-base md:text-lg">GET
+                                A QUOTE</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Swiper Pagination -->
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="achievements" class="py-12 md:py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 md:mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-red-500 mb-3 md:mb-4">OUR PRIDE & ACHIEVEMENTS</h2>
+                <div class="w-20 md:w-24 h-1 bg-gray-400 mx-auto mb-4 md:mb-6"></div>
+                <p class="text-lg md:text-xl text-gray-700 max-w-2xl mx-auto">Celebrating our milestones and
+                    recognitions in the automotive industry.</p>
+            </div>
+
+            <!-- Horizontal Scrolling Container -->
+            <div class="relative">
+                <!-- Scrollable Content -->
+                <div class="flex overflow-x-auto pb-6 space-x-4 md:space-x-6 px-2 md:px-0 hide-scrollbar">
+                    <!-- Achievement 1 -->
+                    <div class="flex-shrink-0 w-64 sm:w-72 md:w-80 h-80 md:h-80 rounded-lg overflow-hidden shadow-md">
+                        <img src="images/award1.png" alt="Achievement 1" class="w-full h-full object-cover">
+                    </div>
+
+                    <!-- Achievement 2 -->
+                    <div class="flex-shrink-0 w-64 sm:w-72 md:w-80 h-80 md:h-80 rounded-lg overflow-hidden shadow-md">
+                        <img src="images/award2.png" alt="Achievement 2" class="w-full h-full object-cover">
+                    </div>
+
+                    <!-- Achievement 3 -->
+                    <div class="flex-shrink-0 w-64 sm:w-72 md:w-80 h-80 md:h-80 rounded-lg overflow-hidden shadow-md">
+                        <img src="images/award3.png" alt="Achievement 3" class="w-full h-full object-cover">
+                    </div>
+
+                    <!-- Achievement 4 -->
+                    <div class="flex-shrink-0 w-64 sm:w-72 md:w-80 h-80 md:h-80 rounded-lg overflow-hidden shadow-md">
+                        <img src="images/award4.png" alt="Achievement 4" class="w-full h-full object-cover">
+                    </div>
+
+                    <!-- Achievement 5 -->
+                    <div class="flex-shrink-0 w-64 sm:w-72 md:w-80 h-80 md:h-80 rounded-lg overflow-hidden shadow-md">
+                        <img src="images/award5.png" alt="Achievement 5" class="w-full h-full object-cover">
+                    </div>
+
+                    <!-- Achievement 6 -->
+                    <div class="flex-shrink-0 w-64 sm:w-72 md:w-80 h-80 md:h-80 rounded-lg overflow-hidden shadow-md">
+                        <img src="images/award6.png" alt="Achievement 6" class="w-full h-full object-cover">
+                    </div>
+
+                    <div class="flex-shrink-0 w-64 sm:w-72 md:w-80 h-80 md:h-80 rounded-lg overflow-hidden shadow-md">
+                        <img src="images/award7.png" alt="Achievement 6" class="w-full h-full object-cover">
+                    </div>
+
+                    <div class="flex-shrink-0 w-64 sm:w-72 md:w-80 h-80 md:h-80 rounded-lg overflow-hidden shadow-md">
+                        <img src="images/award8.png" alt="Achievement 6" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="gallery" class="py-12 md:py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10 md:mb-14">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-2">GALLERY</h2>
+                <div class="w-20 h-1 bg-red-500 mx-auto mb-4"></div>
+            </div>
+
+            <!-- 🔹 Mobile: Horizontal Scroll -->
+            <div class="flex overflow-x-auto pb-6 space-x-4 hide-scrollbar lg:hidden">
+                <!-- Repeat all cards here for mobile scroll view -->
+                <div
+                    class="flex-shrink-0 w-80 group relative rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <img src="images/jupitor.png" alt="Apache SID" class="w-full h-80 object-cover">
+
+                </div>
+
+                <div
+                    class="flex-shrink-0 w-80 group relative rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <img src="images/jupitorx.png" alt="Apache SERIES R T R" class="w-full h-80 object-cover">
+
+                </div>
+
+                <div
+                    class="flex-shrink-0 w-80 group relative rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <img src="images/natrox.png" alt="TVS" class="w-full h-80 object-cover">
+
+                </div>
+
+                <div
+                    class="flex-shrink-0 w-80 group relative rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <img src="images/tvszest.png" alt="Apache RTE SID" class="w-full h-80 object-cover">
+
+                </div>
+
+                <div
+                    class="flex-shrink-0 w-80 group relative rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <img src="images/iq.png" alt="APACHE SID AND CAMERA" class="w-full h-80 object-cover">
+
+                </div>
+
+                <div
+                    class="flex-shrink-0 w-80 group relative rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <img src="images/radeon.png" alt="APACHE SID AND CAMERA" class="w-full h-80 object-cover">
+
+                </div>
+
+                <div
+                    class="flex-shrink-0 w-80 group relative rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <img src="images/raider.png" alt="APACHE SID AND CAMERA" class="w-full h-80 object-cover">
+
+                </div>
+
+                <div
+                    class="flex-shrink-0 w-80 group relative rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <img src="images/ronin.png" alt="APACHE SID AND CAMERA" class="w-full h-80 object-cover">
+
+                </div>
+
+                <div
+                    class="flex-shrink-0 w-80 group relative rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <img src="images/rr.png" alt="APACHE SID AND CAMERA" class="w-full h-80 object-cover">
+
+                </div>
+
+                <div
+                    class="flex-shrink-0 w-80 group relative rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <img src="images/rtr.png" alt="APACHE SID AND CAMERA" class="w-full h-80 object-cover">
+
+                </div>
+
+                <div
+                    class="flex-shrink-0 w-80 group relative rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <img src="images/rtr310.png" alt="APACHE SID AND CAMERA" class="w-full h-80 object-cover">
+
+                </div>
+
+                <div
+                    class="flex-shrink-0 w-80 group relative rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <img src="images/tvssoirt.png" alt="APACHE SID AND CAMERA" class="w-full h-80 object-cover">
+
+                </div>
+
+                <div
+                    class="flex-shrink-0 w-80 group relative rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <img src="images/city.png" alt="APACHE SID AND CAMERA" class="w-full h-80 object-cover">
+
+                </div>
+
+                <div
+                    class="flex-shrink-0 w-80 group relative rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <img src="images/xl.png" alt="APACHE SID AND CAMERA" class="w-full h-80 object-cover">
+
+                </div>
+
+                <div
+                    class="flex-shrink-0 w-80 group relative rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <img src="images/zayada.png" alt="APACHE SID AND CAMERA" class="w-full h-80 object-cover">
+                </div>
+            </div>
+
+            <!-- 🔹 Desktop: 3-Column Grid -->
+            <div class="hidden lg:grid lg:grid-cols-3 lg:gap-6">
+                <!-- Repeat all cards here for desktop grid view -->
+                <div
+                    class="flex-shrink-0 w-80 group relative rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <img src="images/jupitor.png" alt="Apache SID" class="w-full h-80 object-cover">
+
+                </div>
+
+                <div
+                    class="flex-shrink-0 w-80 group relative rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <img src="images/jupitorx.png" alt="Apache SERIES R T R" class="w-full h-80 object-cover">
+
+                </div>
+
+                <div
+                    class="flex-shrink-0 w-80 group relative rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <img src="images/natrox.png" alt="TVS" class="w-full h-80 object-cover">
+
+                </div>
+
+                <div
+                    class="flex-shrink-0 w-80 group relative rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <img src="images/tvszest.png" alt="Apache RTE SID" class="w-full h-80 object-cover">
+
+                </div>
+
+                <div
+                    class="flex-shrink-0 w-80 group relative rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <img src="images/iq.png" alt="APACHE SID AND CAMERA" class="w-full h-80 object-cover">
+
+                </div>
+
+                <div
+                    class="flex-shrink-0 w-80 group relative rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <img src="images/radeon.png" alt="APACHE SID AND CAMERA" class="w-full h-80 object-cover">
+
+                </div>
+
+                <div
+                    class="flex-shrink-0 w-80 group relative rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <img src="images/raider.png" alt="APACHE SID AND CAMERA" class="w-full h-80 object-cover">
+
+                </div>
+
+                <div
+                    class="flex-shrink-0 w-80 group relative rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <img src="images/ronin.png" alt="APACHE SID AND CAMERA" class="w-full h-80 object-cover">
+
+                </div>
+
+                <div
+                    class="flex-shrink-0 w-80 group relative rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <img src="images/rr.png" alt="APACHE SID AND CAMERA" class="w-full h-80 object-cover">
+
+                </div>
+
+                <div
+                    class="flex-shrink-0 w-80 group relative rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <img src="images/rtr.png" alt="APACHE SID AND CAMERA" class="w-full h-80 object-cover">
+
+                </div>
+
+                <div
+                    class="flex-shrink-0 w-80 group relative rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <img src="images/rtr310.png" alt="APACHE SID AND CAMERA" class="w-full h-80 object-cover">
+
+                </div>
+
+                <div
+                    class="flex-shrink-0 w-80 group relative rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <img src="images/tvssoirt.png" alt="APACHE SID AND CAMERA" class="w-full h-80 object-cover">
+
+                </div>
+
+                <div
+                    class="flex-shrink-0 w-80 group relative rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <img src="images/city.png" alt="APACHE SID AND CAMERA" class="w-full h-80 object-cover">
+
+                </div>
+
+                <div
+                    class="flex-shrink-0 w-80 group relative rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <img src="images/xl.png" alt="APACHE SID AND CAMERA" class="w-full h-80 object-cover">
+
+                </div>
+
+                <div
+                    class="flex-shrink-0 w-80 group relative rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <img src="images/zayada.png" alt="APACHE SID AND CAMERA" class="w-full h-80 object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-black mb-8">LET'S GET IN TOUCH!</h2>
+                <div class="w-24 h-1 bg-black mx-auto mb-8"></div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-blue-900 text-white text-center py-6 rounded-t-lg">
+                    <h3 class="text-2xl font-bold">Fill the Form</h3>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-b-lg shadow-lg">
+                    <form id="contactForm" action="send_mail.php" method="POST" class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <input type="text" name="full_name" placeholder="Full Name" required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500">
+                            <input type="tel" name="phone" placeholder="Phone Number" required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500">
+                        </div>
+                        <div class="grid md:grid-cols-3 gap-6">
+                            <input type="email" name="email" placeholder="Email Address" required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500">
+                            <select name="city" required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500">
+                                <option value="">City</option>
+                                <option value="Berhampur">Berhampur</option>
+                                <option value="Bhubaneswar">Bhubaneswar</option>
+                                <option value="Cuttack">Cuttack</option>
+                                <option value="Other">Other</option>
+                            </select>
+                            <select name="vehicle" required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500">
+                                <option value="">Choose Your Vehicle</option>
+                                <option value="TVS IQube Electric">TVS IQube Electric</option>
+                                <option value="TVS XL 100">TVS XL 100</option>
+                                <option value="TVS Sport">TVS Sport</option>
+                                <option value="TVS NTORQ 125">TVS NTORQ 125</option>
+                                <option value="TVS Apache RTR 160">TVS Apache RTR 160</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <div class="text-right">
+                            <button type="submit"
+                                class="bg-red-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-red-600 transition">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Call to Action -->
+            <div class="mt-20 bg-gradient-to-r from-blue-100 to-purple-100 rounded-lg p-12 text-center">
+                <h3 class="text-2xl text-gray-800 mb-4">So when are you transforming to future?</h3>
+                <h2 class="text-4xl font-bold text-black mb-8">Are you Ready? Contact Us Today!</h2>
+                <button
+                    class="bg-red-500 text-white px-8 py-4 rounded-lg text-xl font-bold hover:bg-red-600 transition">CALL
+                    US</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">Arya Mototech</h3>
+                    <p class="text-gray-400">Authorized TVS Dealer in Berhampur specializing in sales, service, and
+                        spare parts.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contact Info</h4>
+                    <p class="text-gray-400 mb-2"><i class="fas fa-map-marker-alt mr-2"></i>Berhampur, Odisha</p>
+                    <p class="text-gray-400 mb-2"><i class="fas fa-phone mr-2"></i>+91 XXXXXXXXXX</p>
+                    <p class="text-gray-400"><i class="fas fa-envelope mr-2"></i>info@aryamototech.com</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+                <p class="text-gray-400">All rights reserved &copy; 2025 Arya Mototech</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+                // Close mobile menu if open
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Initialize Swiper for Products with infinite loop and exactly 3 slides
+        const productsSwiper = new Swiper('.products-swiper', {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: true,
+            pagination: {
+                el: '.products-swiper .swiper-pagination',
+                clickable: true,
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 2,
+                    spaceBetween: 30,
+                },
+                768: {
+                    slidesPerView: 3,
+                    spaceBetween: 30,
+                },
+                1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 40,
+                },
+            },
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+        });
+
+        // Initialize Swiper for Gallery
+        const gallerySwiper = new Swiper('.gallery-swiper', {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: true,
+            pagination: {
+                el: '.gallery-swiper .swiper-pagination',
+                clickable: true,
+            },
+            autoplay: {
+                delay: 4000,
+                disableOnInteraction: false,
+            },
+            effect: 'fade',
+            fadeEffect: {
+                crossFade: true
+            },
+        });
+
+        // Initialize Swiper for Achievements with infinite loop and pagination
+        const achievementsSwiper = new Swiper('.achievements-swiper', {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            loop: true,
+            pagination: {
+                el: '.achievements-swiper .swiper-pagination',
+                clickable: true,
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                },
+                768: {
+                    slidesPerView: 3,
+                    spaceBetween: 30,
+                },
+                1024: {
+                    slidesPerView: 4,
+                    spaceBetween: 40,
+                },
+            },
+            autoplay: {
+                delay: 3500,
+                disableOnInteraction: false,
+            },
+        });
+
+        // Product category filtering
+        const categoryBtns = document.querySelectorAll('.category-btn');
+        const productCards = document.querySelectorAll('.product-card');
+
+        categoryBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                categoryBtns.forEach(b => b.classList.remove('active', 'bg-blue-900', 'text-white'));
+                categoryBtns.forEach(b => b.classList.add('text-blue-900'));
+
+                // Add active class to clicked button
+                btn.classList.add('active', 'bg-blue-900', 'text-white');
+                btn.classList.remove('text-blue-900');
+
+                const category = btn.dataset.category;
+
+                // Filter products
+                productCards.forEach(card => {
+                    const slide = card.closest('.swiper-slide');
+                    if (category === 'all' || card.dataset.category.includes(category)) {
+                        slide.style.display = 'block';
+                    } else {
+                        slide.style.display = 'none';
+                    }
+                });
+
+                // Update swiper after filtering
+                productsSwiper.update();
+            });
+        });
+
+       
+    </script>
+</body>
+
+</html>
