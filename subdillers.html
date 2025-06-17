@@ -47,137 +47,206 @@
         .gradient-bg {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         }
+
+        .dealer-logo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
     </style>
 </head>
 
 <body class="bg-gray-50 min-h-screen">
 
-    <!-- Enhanced Navigation -->
-    <nav class="bg-white shadow-lg sticky top-0 z-50 border-b-2 border-red-500">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center py-3">
-                <!-- Logo Section -->
-                <div class="flex items-center space-x-3">
-                    <img src="images/logo.png" alt="Logo" class="w-32 h-14 object-contain">
-                    <div class="hidden md:block">
-                        <h1 class="text-xl font-bold text-gray-800">Motor Dealers</h1>
-                        <p class="text-sm text-gray-600">Network Portal</p>
-                    </div>
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo -->
+                <div class="text-2xl font-bold text-red-500 flex items-center gap-2">
+                    <img src="images/logo.png" alt="Logo" class="w-28 h-12">
                 </div>
 
-                <!-- Navigation Links -->
-                <div class="flex items-center space-x-4">
-                    <button onclick="scrollToTop()"
-                        class="hidden md:flex items-center text-gray-600 hover:text-red-500 transition-colors">
-                        <i class="fas fa-home mr-2"></i>
-                        <span>Home</span>
-                    </button>
-                    <button onclick="scrollToDealers()"
-                        class="hidden md:flex items-center text-gray-600 hover:text-red-500 transition-colors">
-                        <i class="fas fa-store mr-2"></i>
-                        <span>Dealers</span>
-                    </button>
-                    <a href="index.html"
-                        class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg transition-colors flex items-center">
-                        <i class="fas fa-arrow-left mr-2"></i>
-                        <span class="hidden sm:inline">Back to Home</span>
-                        <span class="sm:hidden">Back</span>
-                    </a>
-                </div>
+                <!-- Back Button -->
+                <a href="index.html"
+                    class="text-white bg-red-500 px-4 py-2 rounded hover:bg-red-600 transition text-sm md:text-base">
+                    ⬅ Back to Home
+                </a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="dealersSection" class="py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Our Authorized Dealers</h2>
-                <p class="text-lg text-gray-600">Choose from our network of trusted motor dealers</p>
-                <div class="w-24 h-1 bg-red-500 mx-auto mt-4"></div>
-
-                <!-- 📸 Image Section -->
-                <div class="mt-6">
-                    <img src="images/landing.png" alt="Authorized Dealers"
-                        class="mx-auto rounded-lg shadow-md w-full max-w-3xl">
-                </div>
+    <section id="home" class="hero-bg min-h-screen flex items-center pt-20">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">
+                <span class="text-blue-900">RIDE INTO THE FUTURE</span>
+                <span class="text-red-500 block">WITH THE TVS RANGE</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-700 mb-8 max-w-4xl mx-auto">
+                <strong>AryaMototech, Berhampur</strong> is the Authorized Dealer of TVS Motor Company for two-wheelers,
+                specializing in sales, service, and spare parts.
+            </p>
+            <div class="mt-12">
+                <img src="images/landing.png" alt="TVS Motorcycle Range" class="mx-auto rounded-lg shadow-lg">
             </div>
-
         </div>
     </section>
 
 
+
+    <!-- Search and Filter Section -->
+    <section class="py-8 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="search-box rounded-lg p-6 shadow-lg">
+                <div class="flex flex-col md:flex-row gap-4 items-center">
+                    <div class="flex-1">
+                        <div class="relative">
+                            <i
+                                class="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                            <input type="text" id="searchInput"
+                                placeholder="Search dealers by name, location, or owner..."
+                                class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent">
+                        </div>
+                    </div>
+                    <button onclick="clearSearch()"
+                        class="bg-red-500 hover:bg-red-600 text-white px-6 py-3 rounded-lg transition-colors">
+                        <i class="fas fa-times mr-2"></i>Clear
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Dealers Section -->
-    <section id="dealersSection" class="pb-12">
+    <section id="dealersSection" class="py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
                 <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Our Authorized Dealers</h2>
-                <p class="text-lg text-gray-600">Choose from our network of trusted motor dealers</p>
+                <p class="text-lg text-gray-600">Choose from our network of 18 trusted motor dealers</p>
                 <div class="w-24 h-1 bg-red-500 mx-auto mt-4"></div>
             </div>
 
             <!-- Dealers Grid -->
             <div id="dealersGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
 
-                <!-- Dealer Card 1 -->
+                <!-- Dealer Card 1 - Dakhinakali Motors -->
                 <div class="dealer-card bg-white rounded-xl shadow-lg overflow-hidden card-hover fade-in">
                     <div
-                        class="logo-section bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center ">
-                        <img src="dealers-images/sairammotor.jpg" alt="Sairam Motors"
-                            class="w-full h-full object-cover rounded-lg shadow-md">
+                        class="logo-section bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center p-4">
+                        <div class="dealer-logo bg-blue-700">DM</div>
                     </div>
                     <div class="content-section p-6">
-                        <h3 class="text-xl font-bold text-gray-800 mb-3 text-center">Sairam Motors</h3>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3 text-center">Dakhinakali Motors</h3>
                         <div class="space-y-3">
                             <div class="flex items-start">
                                 <i class="fas fa-map-marker-alt text-red-500 mt-1 mr-3"></i>
-                                <p class="text-gray-600 text-sm">Main Road, Chatrapur | Rambha, Ganjam</p>
+                                <p class="text-gray-600 text-sm">Purushottampur</p>
                             </div>
-                            <div class="space-y-1">
-                                <div class="flex items-center">
-                                    <i class="fas fa-phone text-green-500 mr-3"></i>
-                                    <a href="tel:7609999627" class="text-sm text-blue-600 hover:underline">Chatrapur:
-                                        7609999627</a>
-                                </div>
-                                <div class="flex items-center">
-                                    <i class="fas fa-phone text-green-500 mr-3"></i>
-                                    <a href="tel:9124299627" class="text-sm text-blue-600 hover:underline">Rambha:
-                                        9124299627</a>
-                                </div>
-                                <div class="flex items-center">
-                                    <i class="fas fa-phone text-green-500 mr-3"></i>
-                                    <a href="tel:7606999627" class="text-sm text-blue-600 hover:underline">Keshpur:
-                                        7606999627</a>
-                                </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-user text-purple-500 mr-3"></i>
+                                <p class="text-gray-600 text-sm">Susanta Dash</p>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-phone text-green-500 mr-3"></i>
+                                <a href="tel:9337626215" class="text-sm text-blue-600 hover:underline">9337626215</a>
                             </div>
                         </div>
-                        <button onclick="contactDealer('7609999627')"
+                        <button onclick="contactDealer('9337626215')"
                             class="w-full mt-4 bg-red-500 hover:bg-red-600 text-white py-2 rounded-lg transition-colors">
                             <i class="fas fa-phone mr-2"></i>Contact Now
                         </button>
                     </div>
                 </div>
 
-                <!-- Dealer Card 2 -->
+                <!-- Dealer Card 2 - Sang Motors -->
                 <div class="dealer-card bg-white rounded-xl shadow-lg overflow-hidden card-hover fade-in"
                     style="animation-delay: 0.1s">
                     <div
-                        class="logo-section bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center ">
-                        <img src="dealers-images/ujaleswar.jpg" alt="Ujwaleswar Motors"
-                            class="w-full h-full object-cover rounded-lg shadow-md">
+                        class="logo-section bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center p-4">
+                        <div class="dealer-logo bg-green-700">SM</div>
+                    </div>
+                    <div class="content-section p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3 text-center">Sang Motors</h3>
+                        <div class="space-y-3">
+                            <div class="flex items-start">
+                                <i class="fas fa-map-marker-alt text-red-500 mt-1 mr-3"></i>
+                                <p class="text-gray-600 text-sm">Aska</p>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-user text-purple-500 mr-3"></i>
+                                <p class="text-gray-600 text-sm">Aswini Patnaik</p>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-phone text-green-500 mr-3"></i>
+                                <a href="tel:9861046837" class="text-sm text-blue-600 hover:underline">9861046837</a>
+                            </div>
+                        </div>
+                        <button onclick="contactDealer('9861046837')"
+                            class="w-full mt-4 bg-red-500 hover:bg-red-600 text-white py-2 rounded-lg transition-colors">
+                            <i class="fas fa-phone mr-2"></i>Contact Now
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Dealer Card 3 - Maa Balakumari Motors (Chikiti) -->
+                <div class="dealer-card bg-white rounded-xl shadow-lg overflow-hidden card-hover fade-in"
+                    style="animation-delay: 0.2s">
+                    <div
+                        class="logo-section bg-gradient-to-br from-pink-500 to-pink-600 flex items-center justify-center p-4">
+                        <div class="dealer-logo bg-pink-700">MBM</div>
+                    </div>
+                    <div class="content-section p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3 text-center">Maa Balakumari Motors</h3>
+                        <div class="space-y-3">
+                            <div class="flex items-start">
+                                <i class="fas fa-map-marker-alt text-red-500 mt-1 mr-3"></i>
+                                <p class="text-gray-600 text-sm">Chikiti</p>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-user text-purple-500 mr-3"></i>
+                                <p class="text-gray-600 text-sm">P. Dharraju</p>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-phone text-green-500 mr-3"></i>
+                                <a href="tel:9348210610" class="text-sm text-blue-600 hover:underline">9348210610</a>
+                            </div>
+                        </div>
+                        <button onclick="contactDealer('9348210610')"
+                            class="w-full mt-4 bg-red-500 hover:bg-red-600 text-white py-2 rounded-lg transition-colors">
+                            <i class="fas fa-phone mr-2"></i>Contact Now
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Dealer Card 4 - Ujwaleswar Motors -->
+                <div class="dealer-card bg-white rounded-xl shadow-lg overflow-hidden card-hover fade-in"
+                    style="animation-delay: 0.3s">
+                    <div
+                        class="logo-section bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center p-4">
+                        <div class="dealer-logo bg-purple-700">UM</div>
                     </div>
                     <div class="content-section p-6">
                         <h3 class="text-xl font-bold text-gray-800 mb-3 text-center">Ujwaleswar Motors</h3>
                         <div class="space-y-3">
                             <div class="flex items-start">
                                 <i class="fas fa-map-marker-alt text-red-500 mt-1 mr-3"></i>
-                                <p class="text-gray-600 text-sm">Gajapati Nagar, Pathpatnam Road, Parlakhemundi,
-                                    Gajapati</p>
+                                <p class="text-gray-600 text-sm">Paralakhemundi</p>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-user text-purple-500 mr-3"></i>
+                                <p class="text-gray-600 text-sm">Rama Krishna Panda</p>
                             </div>
                             <div class="flex items-center">
                                 <i class="fas fa-phone text-green-500 mr-3"></i>
-                                <a href="tel:8895876466"
-                                    class="text-sm text-blue-600 hover:underline">+91-8895876466</a>
+                                <a href="tel:8895876466" class="text-sm text-blue-600 hover:underline">8895876466</a>
                             </div>
                         </div>
                         <button onclick="contactDealer('8895876466')"
@@ -187,91 +256,27 @@
                     </div>
                 </div>
 
-                <!-- Dealer Card 3 -->
-                <div class="dealer-card bg-white rounded-xl shadow-lg overflow-hidden card-hover fade-in"
-                    style="animation-delay: 0.2s">
-                    <div
-                        class="logo-section bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center ">
-                        <img src="dealers-images/sangmotors.jpg" alt="Sang Motors"
-                            class="w-full h-full object-cover rounded-lg shadow-md">
-                    </div>
-                    <div class="content-section p-6">
-                        <h3 class="text-xl font-bold text-gray-800 mb-3 text-center">Sang Motors</h3>
-                        <div class="space-y-3">
-                            <div class="flex items-start">
-                                <i class="fas fa-map-marker-alt text-red-500 mt-1 mr-3"></i>
-                                <p class="text-gray-600 text-sm">Kalinga Road, Aska</p>
-                            </div>
-                            <div class="flex items-center">
-                                <i class="fas fa-phone text-green-500 mr-3"></i>
-                                <a href="tel:9040446837" class="text-sm text-blue-600 hover:underline">9040446837</a>
-                            </div>
-                        </div>
-                        <button onclick="contactDealer('9040446837')"
-                            class="w-full mt-4 bg-red-500 hover:bg-red-600 text-white py-2 rounded-lg transition-colors">
-                            <i class="fas fa-phone mr-2"></i>Contact Now
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Dealer Card 4 -->
-                <div class="dealer-card bg-white rounded-xl shadow-lg overflow-hidden card-hover fade-in"
-                    style="animation-delay: 0.3s">
-                    <div
-                        class="logo-section bg-gradient-to-br from-pink-500 to-pink-600 flex items-center justify-center ">
-                        <img src="dealers-images/maabalakumari.jpg" alt="Maa Balakumari Motors"
-                            class="w-full h-full object-cover rounded-lg shadow-md">
-                    </div>
-                    <div class="content-section p-6">
-                        <h3 class="text-xl font-bold text-gray-800 mb-3 text-center">Maa Balakumari Motors</h3>
-                        <div class="space-y-3">
-                            <div class="flex items-start">
-                                <i class="fas fa-map-marker-alt text-red-500 mt-1 mr-3"></i>
-                                <p class="text-gray-600 text-sm">Chikiti | Digapahandi</p>
-                            </div>
-                            <div class="space-y-1">
-                                <div class="flex items-center">
-                                    <i class="fas fa-phone text-green-500 mr-3"></i>
-                                    <a href="tel:9437626215" class="text-sm text-blue-600 hover:underline">Chikiti:
-                                        9437626215</a>
-                                </div>
-                                <div class="flex items-center">
-                                    <i class="fas fa-phone text-green-500 mr-3"></i>
-                                    <a href="tel:9861050018" class="text-sm text-blue-600 hover:underline">Digapahandi:
-                                        9861050018</a>
-                                </div>
-                            </div>
-                        </div>
-                        <button onclick="contactDealer('9437626215')"
-                            class="w-full mt-4 bg-red-500 hover:bg-red-600 text-white py-2 rounded-lg transition-colors">
-                            <i class="fas fa-phone mr-2"></i>Contact Now
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Dealer Card 5 -->
+                <!-- Dealer Card 5 - Palo Automobiles -->
                 <div class="dealer-card bg-white rounded-xl shadow-lg overflow-hidden card-hover fade-in"
                     style="animation-delay: 0.4s">
                     <div
-                        class="logo-section bg-gradient-to-br from-teal-500 to-teal-600 flex items-center justify-center ">
-                        <img src="dealers-images/palo.jpg" alt="Palo Automobiles"
-                            class="w-full h-full object-cover rounded-lg shadow-md">
+                        class="logo-section bg-gradient-to-br from-teal-500 to-teal-600 flex items-center justify-center p-4">
+                        <div class="dealer-logo bg-teal-700">PA</div>
                     </div>
                     <div class="content-section p-6">
                         <h3 class="text-xl font-bold text-gray-800 mb-3 text-center">Palo Automobiles</h3>
                         <div class="space-y-3">
                             <div class="flex items-start">
                                 <i class="fas fa-map-marker-alt text-red-500 mt-1 mr-3"></i>
-                                <p class="text-gray-600 text-sm">Polasara, Ganjam, Odisha</p>
+                                <p class="text-gray-600 text-sm">Polasara</p>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-user text-purple-500 mr-3"></i>
+                                <p class="text-gray-600 text-sm">Sunil Kumar Palo</p>
                             </div>
                             <div class="flex items-center">
                                 <i class="fas fa-phone text-green-500 mr-3"></i>
                                 <a href="tel:9861838393" class="text-sm text-blue-600 hover:underline">9861838393</a>
-                            </div>
-                            <div class="flex items-center">
-                                <i class="fas fa-envelope text-blue-500 mr-3"></i>
-                                <a href="mailto:ms.paloautomobiles@gmail.com"
-                                    class="text-sm text-blue-600 hover:underline">Email</a>
                             </div>
                         </div>
                         <button onclick="contactDealer('9861838393')"
@@ -281,48 +286,263 @@
                     </div>
                 </div>
 
-                <!-- Dealer Card 6 -->
+                <!-- Dealer Card 6 - Sairam Motors (Chatrapur) -->
                 <div class="dealer-card bg-white rounded-xl shadow-lg overflow-hidden card-hover fade-in"
                     style="animation-delay: 0.5s">
                     <div
-                        class="logo-section bg-gradient-to-br from-indigo-500 to-indigo-600 flex items-center justify-center ">
-                        <img src="dealers-images/hrushikesh.jpg" alt="Hrushikesh Motors"
-                            class="w-full h-full object-cover rounded-lg shadow-md">
+                        class="logo-section bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center p-4">
+                        <div class="dealer-logo bg-orange-700">SM</div>
                     </div>
                     <div class="content-section p-6">
-                        <h3 class="text-xl font-bold text-gray-800 mb-3 text-center">Hrushikesh Motors</h3>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3 text-center">Sairam Motors</h3>
                         <div class="space-y-3">
                             <div class="flex items-start">
                                 <i class="fas fa-map-marker-alt text-red-500 mt-1 mr-3"></i>
-                                <p class="text-gray-600 text-sm">Near Andhra Bank, Sheragada, Ganjam, Odisha 761106</p>
+                                <p class="text-gray-600 text-sm">Chatrapur</p>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-user text-purple-500 mr-3"></i>
+                                <p class="text-gray-600 text-sm">Balmiki Mahapatra</p>
                             </div>
                             <div class="flex items-center">
                                 <i class="fas fa-phone text-green-500 mr-3"></i>
-                                <a href="tel:9777093397" class="text-sm text-blue-600 hover:underline">9777093397</a>
+                                <a href="tel:9556570263" class="text-sm text-blue-600 hover:underline">9556570263</a>
                             </div>
                         </div>
-                        <button onclick="contactDealer('9777093397')"
+                        <button onclick="contactDealer('9556570263')"
                             class="w-full mt-4 bg-red-500 hover:bg-red-600 text-white py-2 rounded-lg transition-colors">
                             <i class="fas fa-phone mr-2"></i>Contact Now
                         </button>
                     </div>
                 </div>
 
-                <!-- Dealer Card 7 -->
+                <!-- Dealer Card 7 - Maa Balakumari Motors (Digapahandi) -->
                 <div class="dealer-card bg-white rounded-xl shadow-lg overflow-hidden card-hover fade-in"
                     style="animation-delay: 0.6s">
                     <div
-                        class="logo-section bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center ">
-                        <img src="dealers-images/murali.jpg" alt="Murali Motors"
-                            class="w-full h-full object-cover rounded-lg shadow-md">
+                        class="logo-section bg-gradient-to-br from-indigo-500 to-indigo-600 flex items-center justify-center p-4">
+                        <div class="dealer-logo bg-indigo-700">MBM</div>
+                    </div>
+                    <div class="content-section p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3 text-center">Maa Balakumari Motors</h3>
+                        <div class="space-y-3">
+                            <div class="flex items-start">
+                                <i class="fas fa-map-marker-alt text-red-500 mt-1 mr-3"></i>
+                                <p class="text-gray-600 text-sm">Digapahandi</p>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-user text-purple-500 mr-3"></i>
+                                <p class="text-gray-600 text-sm">P. Dharraju</p>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-phone text-green-500 mr-3"></i>
+                                <a href="tel:9348210610" class="text-sm text-blue-600 hover:underline">9348210610</a>
+                            </div>
+                        </div>
+                        <button onclick="contactDealer('9348210610')"
+                            class="w-full mt-4 bg-red-500 hover:bg-red-600 text-white py-2 rounded-lg transition-colors">
+                            <i class="fas fa-phone mr-2"></i>Contact Now
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Dealer Card 8 - Maa Bhubaneswari Motors -->
+                <div class="dealer-card bg-white rounded-xl shadow-lg overflow-hidden card-hover fade-in"
+                    style="animation-delay: 0.7s">
+                    <div
+                        class="logo-section bg-gradient-to-br from-red-500 to-red-600 flex items-center justify-center p-4">
+                        <div class="dealer-logo bg-red-700">MBM</div>
+                    </div>
+                    <div class="content-section p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3 text-center">Maa Bhubaneswari Motors</h3>
+                        <div class="space-y-3">
+                            <div class="flex items-start">
+                                <i class="fas fa-map-marker-alt text-red-500 mt-1 mr-3"></i>
+                                <p class="text-gray-600 text-sm">Hinjilicut</p>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-user text-purple-500 mr-3"></i>
+                                <p class="text-gray-600 text-sm">Hari Chandan Panda</p>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-phone text-green-500 mr-3"></i>
+                                <a href="tel:9337296473" class="text-sm text-blue-600 hover:underline">9337296473</a>
+                            </div>
+                        </div>
+                        <button onclick="contactDealer('9337296473')"
+                            class="w-full mt-4 bg-red-500 hover:bg-red-600 text-white py-2 rounded-lg transition-colors">
+                            <i class="fas fa-phone mr-2"></i>Contact Now
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Dealer Card 9 - Hrushikesh Motors -->
+                <div class="dealer-card bg-white rounded-xl shadow-lg overflow-hidden card-hover fade-in"
+                    style="animation-delay: 0.8s">
+                    <div
+                        class="logo-section bg-gradient-to-br from-yellow-500 to-yellow-600 flex items-center justify-center p-4">
+                        <div class="dealer-logo bg-yellow-700">HM</div>
+                    </div>
+                    <div class="content-section p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3 text-center">Hrushikesh Motors</h3>
+                        <div class="space-y-3">
+                            <div class="flex items-start">
+                                <i class="fas fa-map-marker-alt text-red-500 mt-1 mr-3"></i>
+                                <p class="text-gray-600 text-sm">Sheragada</p>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-user text-purple-500 mr-3"></i>
+                                <p class="text-gray-600 text-sm">Basudev Padhy</p>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-phone text-green-500 mr-3"></i>
+                                <a href="tel:9938077720" class="text-sm text-blue-600 hover:underline">9938077720</a>
+                            </div>
+                        </div>
+                        <button onclick="contactDealer('9938077720')"
+                            class="w-full mt-4 bg-red-500 hover:bg-red-600 text-white py-2 rounded-lg transition-colors">
+                            <i class="fas fa-phone mr-2"></i>Contact Now
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Dealer Card 10 - Jaya Motor -->
+                <div class="dealer-card bg-white rounded-xl shadow-lg overflow-hidden card-hover fade-in"
+                    style="animation-delay: 0.9s">
+                    <div
+                        class="logo-section bg-gradient-to-br from-cyan-500 to-cyan-600 flex items-center justify-center p-4">
+                        <div class="dealer-logo bg-cyan-700">JM</div>
+                    </div>
+                    <div class="content-section p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3 text-center">Jaya Motor</h3>
+                        <div class="space-y-3">
+                            <div class="flex items-start">
+                                <i class="fas fa-map-marker-alt text-red-500 mt-1 mr-3"></i>
+                                <p class="text-gray-600 text-sm">Gunupur</p>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-user text-purple-500 mr-3"></i>
+                                <p class="text-gray-600 text-sm">Ramesh Chandra Nayak</p>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-phone text-green-500 mr-3"></i>
+                                <a href="tel:9437338450" class="text-sm text-blue-600 hover:underline">9437338450</a>
+                            </div>
+                        </div>
+                        <button onclick="contactDealer('9437338450')"
+                            class="w-full mt-4 bg-red-500 hover:bg-red-600 text-white py-2 rounded-lg transition-colors">
+                            <i class="fas fa-phone mr-2"></i>Contact Now
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Dealer Card 11 - Sairam Motors (Rambha) -->
+                <div class="dealer-card bg-white rounded-xl shadow-lg overflow-hidden card-hover fade-in"
+                    style="animation-delay: 1.0s">
+                    <div
+                        class="logo-section bg-gradient-to-br from-lime-500 to-lime-600 flex items-center justify-center p-4">
+                        <div class="dealer-logo bg-lime-700">SM</div>
+                    </div>
+                    <div class="content-section p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3 text-center">Sairam Motors</h3>
+                        <div class="space-y-3">
+                            <div class="flex items-start">
+                                <i class="fas fa-map-marker-alt text-red-500 mt-1 mr-3"></i>
+                                <p class="text-gray-600 text-sm">Rambha</p>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-user text-purple-500 mr-3"></i>
+                                <p class="text-gray-600 text-sm">Balmiki Mahapatra</p>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-phone text-green-500 mr-3"></i>
+                                <a href="tel:9556570263" class="text-sm text-blue-600 hover:underline">9556570263</a>
+                            </div>
+                        </div>
+                        <button onclick="contactDealer('9556570263')"
+                            class="w-full mt-4 bg-red-500 hover:bg-red-600 text-white py-2 rounded-lg transition-colors">
+                            <i class="fas fa-phone mr-2"></i>Contact Now
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Dealer Card 12 - Subham Motors -->
+                <div class="dealer-card bg-white rounded-xl shadow-lg overflow-hidden card-hover fade-in"
+                    style="animation-delay: 1.1s">
+                    <div
+                        class="logo-section bg-gradient-to-br from-emerald-500 to-emerald-600 flex items-center justify-center p-4">
+                        <div class="dealer-logo bg-emerald-700">SM</div>
+                    </div>
+                    <div class="content-section p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3 text-center">Subham Motors</h3>
+                        <div class="space-y-3">
+                            <div class="flex items-start">
+                                <i class="fas fa-map-marker-alt text-red-500 mt-1 mr-3"></i>
+                                <p class="text-gray-600 text-sm">Buguda</p>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-user text-purple-500 mr-3"></i>
+                                <p class="text-gray-600 text-sm">Bhagaban Sahu</p>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-phone text-green-500 mr-3"></i>
+                                <a href="tel:8320444792" class="text-sm text-blue-600 hover:underline">8320444792</a>
+                            </div>
+                        </div>
+                        <button onclick="contactDealer('8320444792')"
+                            class="w-full mt-4 bg-red-500 hover:bg-red-600 text-white py-2 rounded-lg transition-colors">
+                            <i class="fas fa-phone mr-2"></i>Contact Now
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Dealer Card 13 - Maa Mangala Motors -->
+                <div class="dealer-card bg-white rounded-xl shadow-lg overflow-hidden card-hover fade-in"
+                    style="animation-delay: 1.2s">
+                    <div
+                        class="logo-section bg-gradient-to-br from-violet-500 to-violet-600 flex items-center justify-center p-4">
+                        <div class="dealer-logo bg-violet-700">MMM</div>
+                    </div>
+                    <div class="content-section p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3 text-center">Maa Mangala Motors</h3>
+                        <div class="space-y-3">
+                            <div class="flex items-start">
+                                <i class="fas fa-map-marker-alt text-red-500 mt-1 mr-3"></i>
+                                <p class="text-gray-600 text-sm">Beguniapada</p>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-user text-purple-500 mr-3"></i>
+                                <p class="text-gray-600 text-sm">Arun Kumar Majhi</p>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-phone text-green-500 mr-3"></i>
+                                <a href="tel:9692843638" class="text-sm text-blue-600 hover:underline">9692843638</a>
+                            </div>
+                        </div>
+                        <button onclick="contactDealer('9692843638')"
+                            class="w-full mt-4 bg-red-500 hover:bg-red-600 text-white py-2 rounded-lg transition-colors">
+                            <i class="fas fa-phone mr-2"></i>Contact Now
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Dealer Card 14 - Murali Motors -->
+                <div class="dealer-card bg-white rounded-xl shadow-lg overflow-hidden card-hover fade-in"
+                    style="animation-delay: 1.3s">
+                    <div
+                        class="logo-section bg-gradient-to-br from-rose-500 to-rose-600 flex items-center justify-center p-4">
+                        <div class="dealer-logo bg-rose-700">MM</div>
                     </div>
                     <div class="content-section p-6">
                         <h3 class="text-xl font-bold text-gray-800 mb-3 text-center">Murali Motors</h3>
                         <div class="space-y-3">
                             <div class="flex items-start">
                                 <i class="fas fa-map-marker-alt text-red-500 mt-1 mr-3"></i>
-                                <p class="text-gray-600 text-sm">Near Nayara Petrol Pump, Mahendragada, Gajapati,
-                                    Odisha-761017</p>
+                                <p class="text-gray-600 text-sm">Mahendragada</p>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-user text-purple-500 mr-3"></i>
+                                <p class="text-gray-600 text-sm">Ganesh Nayak</p>
                             </div>
                             <div class="flex items-center">
                                 <i class="fas fa-phone text-green-500 mr-3"></i>
@@ -336,41 +556,102 @@
                     </div>
                 </div>
 
-                <!-- Dealer Card 8 -->
+                <!-- Dealer Card 15 - Maa Narayana Motors -->
                 <div class="dealer-card bg-white rounded-xl shadow-lg overflow-hidden card-hover fade-in"
-                    style="animation-delay: 0.7s">
+                    style="animation-delay: 1.4s">
                     <div
-                        class="logo-section bg-gradient-to-br from-red-500 to-red-600 flex items-center justify-center ">
-                        <img src="dealers-images/bhubaneswari.jpg" alt="Maa Bhubaneswari Motors"
-                            class="w-full h-full object-cover rounded-lg shadow-md">
+                        class="logo-section bg-gradient-to-br from-amber-500 to-amber-600 flex items-center justify-center p-4">
+                        <div class="dealer-logo bg-amber-700">MNM</div>
                     </div>
                     <div class="content-section p-6">
-                        <h3 class="text-xl font-bold text-gray-800 mb-3 text-center">Maa Bhubaneswari Motors</h3>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3 text-center">Maa Narayana Motors</h3>
                         <div class="space-y-3">
                             <div class="flex items-start">
                                 <i class="fas fa-map-marker-alt text-red-500 mt-1 mr-3"></i>
-                                <p class="text-gray-600 text-sm">Bainchabania Main Road, Hinjilicut, Ganjam</p>
+                                <p class="text-gray-600 text-sm">Jagannathprasad</p>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-user text-purple-500 mr-3"></i>
+                                <p class="text-gray-600 text-sm">Ashok Kumar Nayak</p>
                             </div>
                             <div class="flex items-center">
                                 <i class="fas fa-phone text-green-500 mr-3"></i>
-                                <a href="tel:9937296473" class="text-sm text-blue-600 hover:underline">9937296473</a>
+                                <a href="tel:9938654579" class="text-sm text-blue-600 hover:underline">9938654579</a>
                             </div>
                         </div>
-                        <button onclick="contactDealer('9937296473')"
+                        <button onclick="contactDealer('9938654579')"
                             class="w-full mt-4 bg-red-500 hover:bg-red-600 text-white py-2 rounded-lg transition-colors">
                             <i class="fas fa-phone mr-2"></i>Contact Now
                         </button>
                     </div>
                 </div>
 
-                <!-- Dealer Card 9 -->
+                <!-- Dealer Card 16 - Maa Adishakti Motors -->
                 <div class="dealer-card bg-white rounded-xl shadow-lg overflow-hidden card-hover fade-in"
-                    style="animation-delay: 0.8s">
+                    style="animation-delay: 1.5s">
                     <div
-                        class="logo-section bg-gradient-to-br from-yellow-500 to-yellow-600 flex items-center justify-center ">
-                        <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-lg">
-                            <span class="text-2xl font-bold text-yellow-600">MP</span>
+                        class="logo-section bg-gradient-to-br from-sky-500 to-sky-600 flex items-center justify-center p-4">
+                        <div class="dealer-logo bg-sky-700">MAM</div>
+                    </div>
+                    <div class="content-section p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3 text-center">Maa Adishakti Motors</h3>
+                        <div class="space-y-3">
+                            <div class="flex items-start">
+                                <i class="fas fa-map-marker-alt text-red-500 mt-1 mr-3"></i>
+                                <p class="text-gray-600 text-sm">Surada</p>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-user text-purple-500 mr-3"></i>
+                                <p class="text-gray-600 text-sm">Monimohan Jena</p>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-phone text-green-500 mr-3"></i>
+                                <a href="tel:8328983625" class="text-sm text-blue-600 hover:underline">8328983625</a>
+                            </div>
                         </div>
+                        <button onclick="contactDealer('8328983625')"
+                            class="w-full mt-4 bg-red-500 hover:bg-red-600 text-white py-2 rounded-lg transition-colors">
+                            <i class="fas fa-phone mr-2"></i>Contact Now
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Dealer Card 17 - Sairam Motors (Rambha - Duplicate) -->
+                <div class="dealer-card bg-white rounded-xl shadow-lg overflow-hidden card-hover fade-in"
+                    style="animation-delay: 1.6s">
+                    <div
+                        class="logo-section bg-gradient-to-br from-stone-500 to-stone-600 flex items-center justify-center p-4">
+                        <div class="dealer-logo bg-stone-700">SM</div>
+                    </div>
+                    <div class="content-section p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3 text-center">Sairam Motors</h3>
+                        <div class="space-y-3">
+                            <div class="flex items-start">
+                                <i class="fas fa-map-marker-alt text-red-500 mt-1 mr-3"></i>
+                                <p class="text-gray-600 text-sm">Rambha (Branch)</p>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-user text-purple-500 mr-3"></i>
+                                <p class="text-gray-600 text-sm">Balmiki Mahapatra</p>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-phone text-green-500 mr-3"></i>
+                                <a href="tel:9556570263" class="text-sm text-blue-600 hover:underline">9556570263</a>
+                            </div>
+                        </div>
+                        <button onclick="contactDealer('9556570263')"
+                            class="w-full mt-4 bg-red-500 hover:bg-red-600 text-white py-2 rounded-lg transition-colors">
+                            <i class="fas fa-phone mr-2"></i>Contact Now
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Dealer Card 18 - MP Motors -->
+                <div class="dealer-card bg-white rounded-xl shadow-lg overflow-hidden card-hover fade-in"
+                    style="animation-delay: 1.7s">
+                    <div
+                        class="logo-section bg-gradient-to-br from-slate-500 to-slate-600 flex items-center justify-center p-4">
+                        <div class="dealer-logo bg-slate-700">MP</div>
                     </div>
                     <div class="content-section p-6">
                         <h3 class="text-xl font-bold text-gray-800 mb-3 text-center">MP Motors</h3>
@@ -380,11 +661,15 @@
                                 <p class="text-gray-600 text-sm">Mohana</p>
                             </div>
                             <div class="flex items-center">
+                                <i class="fas fa-user text-purple-500 mr-3"></i>
+                                <p class="text-gray-600 text-sm">Muna Gouda</p>
+                            </div>
+                            <div class="flex items-center">
                                 <i class="fas fa-phone text-green-500 mr-3"></i>
-                                <a href="tel:8249620868" class="text-sm text-blue-600 hover:underline">8249620868</a>
+                                <a href="tel:8018481838" class="text-sm text-blue-600 hover:underline">8018481838</a>
                             </div>
                         </div>
-                        <button onclick="contactDealer('8249620868')"
+                        <button onclick="contactDealer('8018481838')"
                             class="w-full mt-4 bg-red-500 hover:bg-red-600 text-white py-2 rounded-lg transition-colors">
                             <i class="fas fa-phone mr-2"></i>Contact Now
                         </button>
@@ -415,8 +700,8 @@
                     <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                         <i class="fas fa-headset text-2xl text-green-500"></i>
                     </div>
-                    <h3 class="text-xl font-semibold mb-3">Round-the-Clock Support</h3>
-                    <p class="text-gray-600">Direct contact with dealers for immediate assistance</p>
+                    <h3 class="text-xl font-semibold mb-3">Reliable Assistance</h3>
+                    <p class="text-gray-600">Reach out to dealers during business hours for quick support</p>
                 </div>
 
 
@@ -478,8 +763,9 @@
             dealerCards.forEach(card => {
                 const dealerName = card.querySelector('h3').textContent.toLowerCase();
                 const dealerAddress = card.querySelector('.fa-map-marker-alt').nextElementSibling.textContent.toLowerCase();
+                const ownerName = card.querySelector('.fa-user').nextElementSibling.textContent.toLowerCase();
 
-                if (dealerName.includes(searchTerm) || dealerAddress.includes(searchTerm)) {
+                if (dealerName.includes(searchTerm) || dealerAddress.includes(searchTerm) || ownerName.includes(searchTerm)) {
                     card.style.display = 'block';
                     card.classList.add('fade-in');
                 } else {
