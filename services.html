@@ -7,16 +7,21 @@
     <title>TVS Service Center - Genuine Parts & Expert Care</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+
+    <!-- Google Fonts - Poppins for modern look -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
     <style>
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Poppins', sans-serif;
         }
 
         .tvs-gradient {
-            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #60a5fa 100%);
+            background: linear-gradient(135deg, #093FB4 0%, #ED3500 50%, #093FB4 100%);
         }
 
         .card-hover {
@@ -25,7 +30,7 @@
 
         .card-hover:hover {
             transform: translateY(-8px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            box-shadow: 0 20px 25px -5px rgba(237, 53, 0, 0.1), 0 10px 10px -5px rgba(9, 63, 180, 0.04);
         }
 
         .service-card {
@@ -42,14 +47,14 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(135deg, rgba(30, 58, 138, 0.1), rgba(59, 130, 246, 0.05));
+            background: linear-gradient(135deg, rgba(9, 63, 180, 0.1), rgba(237, 53, 0, 0.05));
             opacity: 0;
             transition: opacity 0.3s ease;
         }
 
         .service-card:hover {
             transform: translateY(-12px) scale(1.02);
-            box-shadow: 0 25px 50px -12px rgba(30, 58, 138, 0.25);
+            box-shadow: 0 25px 50px -12px rgba(237, 53, 0, 0.25);
         }
 
         .service-card:hover::before {
@@ -101,8 +106,8 @@
         }
 
         .tab-button.active {
-            border-bottom: 3px solid #1e3a8a;
-            color: #1e3a8a;
+            border-bottom: 3px solid #093FB4;
+            color: #093FB4;
             font-weight: 600;
         }
 
@@ -152,11 +157,11 @@
         }
 
         .phone-btn {
-            background: #1e3a8a;
+            background: #093FB4;
         }
 
         .location-btn {
-            background: #ef4444;
+            background: #ED3500;
         }
 
         .scrollbar-hide::-webkit-scrollbar {
@@ -165,9 +170,90 @@
 
         .scrollbar-hide {
             -ms-overflow-style: none;
-            /* IE and Edge */
             scrollbar-width: none;
-            /* Firefox */
+        }
+
+        /* Swiper customization */
+        .swiper {
+            width: 100%;
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+
+        .swiper-slide {
+            background-position: center;
+            background-size: cover;
+            width: 320px;
+            height: 520px;
+        }
+
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+        }
+
+        .swiper-pagination-bullet {
+            background: #093FB4;
+        }
+
+        .swiper-pagination-bullet-active {
+            background: #ED3500;
+        }
+
+        .swiper-button-next,
+        .swiper-button-prev {
+            color: #093FB4;
+        }
+
+        .parts-inquiry-btn {
+            background: linear-gradient(135deg, #ED3500, #093FB4);
+            transition: all 0.3s ease;
+        }
+
+        .parts-inquiry-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(237, 53, 0, 0.3);
+        }
+
+        /* Custom color classes */
+        .text-tvs-red {
+            color: #ED3500;
+        }
+
+        .text-tvs-blue {
+            color: #093FB4;
+        }
+
+        .text-tvs-pink {
+            color: #FFD8D8;
+        }
+
+        .text-tvs-cream {
+            color: #FFFCFB;
+        }
+
+        .bg-tvs-red {
+            background-color: #ED3500;
+        }
+
+        .bg-tvs-blue {
+            background-color: #093FB4;
+        }
+
+        .bg-tvs-pink {
+            background-color: #FFD8D8;
+        }
+
+        .bg-tvs-cream {
+            background-color: #FFFCFB;
+        }
+
+        .border-tvs-red {
+            border-color: #ED3500;
+        }
+
+        .border-tvs-blue {
+            border-color: #093FB4;
         }
     </style>
 
@@ -176,9 +262,13 @@
             theme: {
                 extend: {
                     colors: {
-                        'tvs-blue': '#1e3a8a',
-                        'tvs-light': '#3b82f6',
-                        'tvs-red': '#dc2626',
+                        'tvs-red': '#ED3500',
+                        'tvs-blue': '#093FB4',
+                        'tvs-pink': '#FFD8D8',
+                        'tvs-cream': '#FFFCFB',
+                    },
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
                     }
                 }
             }
@@ -186,27 +276,25 @@
     </script>
 </head>
 
-<body class="bg-gray-50">
-
+<body class="bg-tvs-cream font-poppins">
 
     <!-- Navigation -->
     <nav class="bg-white shadow-lg fixed w-full top-0 z-50">
         <div class="max-w-7xl mx-auto px-4">
             <div class="flex justify-between items-center py-4">
                 <!-- Logo -->
-                <div class="text-2xl font-bold text-red-500 flex items-center gap-2">
+                <div class="text-2xl font-bold text-tvs-red flex items-center gap-2">
                     <img src="images/logo.png" alt="Logo" class="w-28 h-12">
                 </div>
 
                 <!-- Back Button -->
                 <a href="index.html"
-                    class="text-white bg-red-500 px-4 py-2 rounded hover:bg-red-600 transition text-sm md:text-base">
+                    class="text-white bg-tvs-red px-4 py-2 rounded-lg hover:bg-red-600 transition text-sm md:text-base font-medium">
                     ⬅ Back to Home
                 </a>
             </div>
         </div>
     </nav>
-
 
     <!-- Mobile Image Section -->
     <section class="w-full h-[80vh] bg-no-repeat bg-cover bg-center md:hidden"
@@ -218,206 +306,171 @@
         style="background-image: url('https://www.tvsmotor.com/our-service/our-products-and-offerings/-/media/Corporate/ServicePage/Banner/dasktop-banner1.webp?iar=0&hash=FC7E63067DDD90A9B1944B100E26B1B6');">
     </section>
 
-
-
-
     <!-- Discover All Services Section -->
-    <section class="py-16 bg-gray-50">
+    <section class="py-16 bg-gradient-to-br from-tvs-cream to-tvs-pink">
         <div class="container mx-auto px-4">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-800 mb-8">Discover All Services</h2>
+                <h2 class="text-4xl font-bold text-tvs-blue mb-8">Discover All Services</h2>
 
                 <!-- Service Tabs -->
                 <div class="overflow-x-auto scrollbar-hide">
                     <div class="flex flex-nowrap justify-start md:justify-center gap-4 mb-8 min-w-max">
                         <button
-                            class="tab-button active px-6 py-3 text-gray-700 border-b-4 border-blue-500 whitespace-nowrap"
-                            data-tab="book-service">
-                            Book a Service
-                        </button>
-                        <button
-                            class="tab-button px-6 py-3 text-gray-700 border-b-4 border-transparent whitespace-nowrap"
+                            class="tab-button active px-8 py-4 text-gray-700 border-b-4 border-tvs-blue whitespace-nowrap font-semibold rounded-t-lg bg-white shadow-md"
                             data-tab="amc">
                             Annual Maintenance Contract (AMC)
                         </button>
                         <button
-                            class="tab-button px-6 py-3 text-gray-700 border-b-4 border-transparent whitespace-nowrap"
-                            data-tab="parts">
-                            TVS Genuine Parts and TRU4 Oil
+                            class="tab-button px-8 py-4 text-gray-700 border-b-4 border-transparent whitespace-nowrap font-semibold rounded-t-lg bg-white shadow-md"
+                            data-tab="rsa">
+                            Road Side Assistance (RSA)
+                        </button>
+                        <button
+                            class="tab-button px-8 py-4 text-gray-700 border-b-4 border-transparent whitespace-nowrap font-semibold rounded-t-lg bg-white shadow-md"
+                            data-tab="atw">
+                            Anytime Warranty (ATW)
                         </button>
                     </div>
                 </div>
-
-
             </div>
 
             <!-- Tab Contents -->
             <div class="max-w-6xl mx-auto">
-                <!-- Book a Service Tab -->
-                <div id="book-service" class="tab-content active">
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                        <div>
-                            <img src="https://www.tvsmotor.com/our-service/our-products-and-offerings/-/media/Corporate/ServicePage/Banner/new-book-a-service.webp?iar=0&hash=F0A74B3B680009003412131AC004C81D"
-                                alt="Book a Service" class="rounded-lg shadow-lg w-full">
-                        </div>
-                        <div>
-                            <h3 class="text-2xl font-bold text-gray-800 mb-4">Book a Service</h3>
-                            <p class="text-gray-700 mb-6">
-                                Say goodbye to service booking woes. Enjoy the convenience of booking a service from
-                                anywhere through WhatsApp and get live status updates on-the-go.
-                            </p>
-
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-                                <div class="flex items-center space-x-3">
-                                    <i class="fas fa-wrench text-tvs-blue text-xl"></i>
-                                    <span class="text-gray-700">Service workshop open all 7 days</span>
-                                </div>
-                                <div class="flex items-center space-x-3">
-                                    <i class="fas fa-bell text-tvs-blue text-xl"></i>
-                                    <span class="text-gray-700">Live status updates of your service</span>
-                                </div>
-                                <div class="flex items-center space-x-3">
-                                    <i class="fas fa-truck text-tvs-blue text-xl"></i>
-                                    <span class="text-gray-700">Service pick up & drop facility</span>
-                                </div>
-                                <div class="flex items-center space-x-3">
-                                    <i class="fab fa-whatsapp text-green-600 text-xl"></i>
-                                    <span class="text-gray-700">Easy booking through WhatsApp</span>
-                                </div>
-                            </div>
-
-                            <a href="servicesbooking.html"
-                                class="bg-tvs-blue hover:bg-blue-800 text-white px-8 py-3 rounded-lg font-semibold transition-colors">
-                                Book Service
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
                 <!-- AMC Tab -->
-                <div id="amc" class="tab-content">
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                        <div>
-                            <h3 class="text-2xl font-bold text-gray-800 mb-4">Annual Maintenance Contract (AMC)</h3>
-                            <p class="text-gray-700 mb-6">
-                                Looking for stress-free vehicle maintenance? Enjoy discounts on labour and parts during
-                                your service journey with our Annual Maintenance Contract (AMC). Choose peace of mind by
-                                choosing a package that suits your needs and offers you better savings.
-                            </p>
+                <div id="amc" class="tab-content active">
+                    <div class="bg-white rounded-2xl shadow-xl p-8">
+                        <div class="flex flex-col-reverse lg:grid lg:grid-cols-2 gap-12 items-center">
+                            <div>
+                                <h3 class="text-3xl font-bold text-tvs-blue mb-6">Annual Maintenance Contract (AMC)</h3>
+                                <p class="text-gray-700 mb-8 text-lg leading-relaxed">
+                                    Looking for stress-free vehicle maintenance? Enjoy discounts on labour and parts
+                                    during
+                                    your service journey with our Annual Maintenance Contract (AMC). Choose peace of
+                                    mind by
+                                    choosing a package that suits your needs and offers you better savings.
+                                </p>
 
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-                                <div class="flex items-center space-x-3">
-                                    <i class="fas fa-shield-alt text-tvs-blue text-xl"></i>
-                                    <span class="text-gray-700">1-year unconditional AMC Warranty on specific
-                                        parts</span>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                                    <div class="flex items-center space-x-4 p-4 bg-tvs-pink rounded-lg">
+                                        <i class="fas fa-shield-alt text-tvs-blue text-2xl"></i>
+                                        <span class="text-gray-700 font-medium">1-year unconditional AMC Warranty on
+                                            specific parts</span>
+                                    </div>
+                                    <div class="flex items-center space-x-4 p-4 bg-tvs-pink rounded-lg">
+                                        <i class="fas fa-percentage text-tvs-blue text-2xl"></i>
+                                        <span class="text-gray-700 font-medium">Upto 15% discount on labour, spares,
+                                            lube & consumables</span>
+                                    </div>
+                                    <div class="flex items-center space-x-4 p-4 bg-tvs-pink rounded-lg">
+                                        <i class="fas fa-truck text-tvs-blue text-2xl"></i>
+                                        <span class="text-gray-700 font-medium">Service pick up & drop facility</span>
+                                    </div>
+                                    <div class="flex items-center space-x-4 p-4 bg-tvs-pink rounded-lg">
+                                        <i class="fas fa-certificate text-tvs-blue text-2xl"></i>
+                                        <span class="text-gray-700 font-medium">Genuine parts guaranteed</span>
+                                    </div>
                                 </div>
-                                <div class="flex items-center space-x-3">
-                                    <i class="fas fa-percentage text-tvs-blue text-xl"></i>
-                                    <span class="text-gray-700">Upto 15% discount on labour, spares, lube &
-                                        consumables</span>
-                                </div>
-                                <div class="flex items-center space-x-3">
-                                    <i class="fas fa-truck text-tvs-blue text-xl"></i>
-                                    <span class="text-gray-700">Service pick up & drop facility</span>
-                                </div>
-                                <div class="flex items-center space-x-3">
-                                    <i class="fas fa-certificate text-tvs-blue text-xl"></i>
-                                    <span class="text-gray-700">Genuine parts guaranteed</span>
-                                </div>
+
+                                <a href="servicesbooking.html"
+                                    class="bg-tvs-blue hover:bg-blue-800 text-white px-10 py-4 rounded-xl font-bold text-lg transition-all transform hover:scale-105 shadow-lg">
+                                    Book AMC Service
+                                </a>
                             </div>
-
-                          <a href="servicesbooking.html"
-                                class="bg-tvs-blue hover:bg-blue-800 text-white px-8 py-3 rounded-lg font-semibold transition-colors">
-                                Book Services
-                            </a>
-                        </div>
-                        <div>
-                            <img src="https://www.tvsmotor.com/our-service/our-products-and-offerings/-/media/Corporate/ServicePage/DOS/amc-image.webp?iar=0&hash=C81CC53D6DC51C79B8846D6CBAFA1C25"
-                                alt="Annual Maintenance Contract" class="rounded-lg shadow-lg w-full">
+                            <div>
+                                <img src="https://www.tvsmotor.com/our-service/our-products-and-offerings/-/media/Corporate/ServicePage/DOS/amc-image.webp?iar=0&hash=C81CC53D6DC51C79B8846D6CBAFA1C25"
+                                    alt="Annual Maintenance Contract" class="rounded-2xl shadow-lg w-full">
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- RSA Tab -->
                 <div id="rsa" class="tab-content">
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                        <div>
-                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-06-14%20210114-5IPINE3I0kCICkEdaeeV2bYj4Jay6a.png"
-                                alt="Road Side Assistance" class="rounded-lg shadow-lg w-full">
-                        </div>
-                        <div>
-                            <h3 class="text-2xl font-bold text-gray-800 mb-4">Road Side Assistance (RSA)</h3>
-                            <p class="text-gray-700 mb-6">
-                                Love to ride but worried about breakdown? Simply dial our 24X7 toll-free number: 1800
-                                258 7111 and help will be on its way. Choose the convenience of RSA with benefits, such
-                                as water and refreshment services, helmet, and document assistance, and more.
-                            </p>
-
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-                                <div class="flex items-center space-x-3">
-                                    <i class="fas fa-tint text-blue-600 text-xl"></i>
-                                    <span class="text-gray-700">Water & refreshments services</span>
-                                </div>
-                                <div class="flex items-center space-x-3">
-                                    <i class="fas fa-taxi text-yellow-600 text-xl"></i>
-                                    <span class="text-gray-700">On-demand taxi assistance</span>
-                                </div>
-                                <div class="flex items-center space-x-3">
-                                    <i class="fas fa-tools text-gray-600 text-xl"></i>
-                                    <span class="text-gray-700">Delivery of basic spares</span>
-                                </div>
-                                <div class="flex items-center space-x-3">
-                                    <i class="fas fa-user-md text-red-600 text-xl"></i>
-                                    <span class="text-gray-700">Medical, hotel & legal coordination</span>
-                                </div>
+                    <div class="bg-white rounded-2xl shadow-xl p-8">
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                            <div>
+                                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-06-21%20at%2011.52.21_2f38b4c1.jpg-Rs2ASGSAbn9ytcjuw9INOZbXyFGhQb.jpeg"
+                                    alt="Road Side Assistance Coverage" class="rounded-2xl shadow-lg w-full">
                             </div>
+                            <div>
+                                <h3 class="text-3xl font-bold text-tvs-blue mb-6">Road Side Assistance (RSA)</h3>
+                                <p class="text-gray-700 mb-8 text-lg leading-relaxed">
+                                    Love to ride but worried about breakdown? Simply dial our 24X7 toll-free number:
+                                    1800 258 7111
+                                    and help will be on its way. We provide comprehensive roadside assistance and
+                                    personal accident cover.
+                                </p>
 
-                            <a href="servicesbooking.html"
-                                class="bg-tvs-blue hover:bg-blue-800 text-white px-8 py-3 rounded-lg font-semibold transition-colors">
-                                Book Services
-                            </a>
+                                <div class="mb-8">
+                                    <h4 class="text-xl font-bold text-tvs-red mb-4">What We Cover:</h4>
+                                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4 text-sm">
+                                        <div class="flex items-center space-x-3 p-3 bg-tvs-pink rounded-lg">
+                                            <i class="fas fa-truck text-tvs-blue text-lg"></i>
+                                            <span class="font-medium">Towing</span>
+                                        </div>
+                                        <div class="flex items-center space-x-3 p-3 bg-tvs-pink rounded-lg">
+                                            <i class="fas fa-circle text-tvs-red text-lg"></i>
+                                            <span class="font-medium">Puncture Assistance</span>
+                                        </div>
+                                        <div class="flex items-center space-x-3 p-3 bg-tvs-pink rounded-lg">
+                                            <i class="fas fa-battery-half text-yellow-600 text-lg"></i>
+                                            <span class="font-medium">Alternate Battery</span>
+                                        </div>
+                                        <div class="flex items-center space-x-3 p-3 bg-tvs-pink rounded-lg">
+                                            <i class="fas fa-wrench text-gray-600 text-lg"></i>
+                                            <span class="font-medium">Breakdown Service</span>
+                                        </div>
+                                        <div class="flex items-center space-x-3 p-3 bg-tvs-pink rounded-lg">
+                                            <i class="fas fa-gas-pump text-green-600 text-lg"></i>
+                                            <span class="font-medium">Fuel Assistance</span>
+                                        </div>
+                                        <div class="flex items-center space-x-3 p-3 bg-tvs-pink rounded-lg">
+                                            <i class="fas fa-taxi text-yellow-600 text-lg"></i>
+                                            <span class="font-medium">Taxi Service</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <a href="servicesbooking.html"
+                                    class="bg-tvs-red hover:bg-red-600 text-white px-10 py-4 rounded-xl font-bold text-lg transition-all transform hover:scale-105 shadow-lg">
+                                    Book RSA Service
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Parts Tab -->
-                <div id="parts" class="tab-content">
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                        <div>
-                            <h3 class="text-2xl font-bold text-gray-800 mb-4">TVS Genuine Parts and TRU4 Oil</h3>
-                            <p class="text-gray-700 mb-6">
-                                Because you deserve only the best, TVS Genuine Parts & TRU4 Oil ensure longer product
-                                lifespans, perfect compatibility, and higher resistance to wear and tear. Sign up for
-                                our Annual Maintenance Contracts and avail an additional discount on genuine parts.
-                            </p>
-
-                            <div class="space-y-4 mb-6">
-                                <div class="flex items-center space-x-3">
-                                    <i class="fas fa-check-circle text-green-600 text-xl"></i>
-                                    <span class="text-gray-700">Longer product lifespans</span>
-                                </div>
-                                <div class="flex items-center space-x-3">
-                                    <i class="fas fa-check-circle text-green-600 text-xl"></i>
-                                    <span class="text-gray-700">Perfect compatibility</span>
-                                </div>
-                                <div class="flex items-center space-x-3">
-                                    <i class="fas fa-check-circle text-green-600 text-xl"></i>
-                                    <span class="text-gray-700">Higher resistance to wear and tear</span>
-                                </div>
-                                <div class="flex items-center space-x-3">
-                                    <i class="fas fa-check-circle text-green-600 text-xl"></i>
-                                    <span class="text-gray-700">Additional discount with AMC</span>
-                                </div>
+                <!-- ATW Tab -->
+                <div id="atw" class="tab-content">
+                    <div class="bg-white rounded-2xl shadow-xl p-8">
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                            <div>
+                                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-06-21%20at%2011.52.22_e6b16286.jpg-LgaYRBcismdUSuzUVOxBdi17J2yBG8.jpeg"
+                                    alt="Anytime Warranty" class="rounded-2xl shadow-lg w-full">
                             </div>
+                            <div>
+                                <h3 class="text-3xl font-bold text-tvs-blue mb-6">Anytime Warranty (ATW)</h3>
+                                <p class="text-gray-700 mb-8 text-lg leading-relaxed">
+                                    Drive your business on wheels without a pause. Anytime Warranty that keeps your
+                                    moped moving.
+                                    Applicable even after your standard warranty is over and available on all
+                                    dealerships.
+                                </p>
 
-                            <a href="servicesbooking.html"
-                                class="bg-tvs-blue hover:bg-blue-800 text-white px-8 py-3 rounded-lg font-semibold transition-colors">
-                                Book Services
-                            </a>
-                        </div>
-                        <div>
-                            <img src="https://www.tvsmotor.com/our-service/our-products-and-offerings/-/media/Corporate/ServicePage/DOS/DOS-Tru4Oil.webp?iar=0&hash=1A0EA0DE60C5418D2F5F230E77C2D4D9"
-                                alt="TVS Genuine Parts" class="rounded-lg shadow-lg w-full">
+                                <div class="bg-gradient-to-r from-tvs-red to-tvs-blue text-white p-8 rounded-2xl mb-8">
+                                    <h4 class="text-2xl font-bold mb-4">Special Pricing:</h4>
+                                    <div class="space-y-3">
+                                        <p class="text-xl font-bold">1 year ATW for ₹333/- only</p>
+                                        <p class="text-xl font-bold">2 years ATW for ₹525/- only</p>
+                                        <p class="text-sm opacity-90">Including all taxes</p>
+                                    </div>
+                                </div>
+
+                                <a href="servicesbooking.html"
+                                    class="bg-tvs-blue hover:bg-blue-800 text-white px-10 py-4 rounded-xl font-bold text-lg transition-all transform hover:scale-105 shadow-lg">
+                                    Book ATW Service
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -425,212 +478,872 @@
         </div>
     </section>
 
-    <!-- Hero Section - TVS Genuine Parts -->
-    <section id="home" class="py-16 bg-gradient-to-r from-gray-100 to-gray-200 relative overflow-hidden">
+    <!-- Parts Replacement Schedule Section with Swiper -->
+    <section class="py-16 bg-white">
         <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div>
-                    <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
-                        TVS Genuine Parts
-                    </h1>
-                    <p class="text-lg text-gray-700 mb-8 leading-relaxed">
-                        Because you deserve only the best, TVS Genuine Parts & TRU4 Oil ensure longer product lifespans,
-                        perfect compatibility, and higher resistance to wear and tear.
-                    </p>
-                    <a href="servicesbooking.html"
-                        class="bg-tvs-blue hover:bg-blue-800 text-white px-8 py-3 rounded-lg font-semibold transition-colors">
-                        Book Services
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-tvs-blue mb-4">Parts Replacement Schedule</h2>
+                <p class="text-gray-600 text-lg">Keep your TVS vehicle running smoothly with our genuine parts
+                    replacement schedule</p>
+            </div>
+
+            <!-- Parts Inquiry Button -->
+            <div class="text-center mb-12">
+                <button onclick="openPartsInquiry()"
+                    class="parts-inquiry-btn text-white px-8 py-4 rounded-xl font-bold text-lg shadow-lg">
+                    <i class="fas fa-envelope mr-3"></i>
+                    Request Parts via Email
+                </button>
+            </div>
+
+            <!-- Swiper -->
+            <div class="swiper partsSwiper">
+                <div class="swiper-wrapper">
+                    <!-- Slide 1 - Engine Oil -->
+                    <div class="swiper-slide">
+                        <div class="bg-white rounded-2xl shadow-xl overflow-hidden border-2 border-tvs-pink h-full">
+                            <div class="h-32 bg-white flex items-center justify-center">
+                                <img src="https://i.pinimg.com/736x/2a/9c/74/2a9c74753c934d123a859ea35ff197cf.jpg"
+                                    alt="TRU4 Engine Oil" class="w-32 h-32 object-contain" />
+                            </div>
+                            <div class="bg-gradient-to-br from-tvs-pink to-white p-6">
+                                <h3 class="text-xl font-bold text-tvs-blue mb-2">TRU4 Engine Oil</h3>
+                                <span
+                                    class="inline-block bg-tvs-blue text-white text-xs px-3 py-1 rounded-full mb-3">Premium
+                                    Quality</span>
+
+                                <div class="space-y-3 text-sm">
+                                    <p class="text-gray-700">
+                                        <span class="font-semibold text-tvs-red">Models:</span> Jupiter, Ntorq, Scooty
+                                        Pep+, Apache RTR
+                                    </p>
+
+                                    <div class="text-gray-700">
+                                        <p class="font-semibold text-tvs-red">Benefits:</p>
+                                        <ul class="list-disc list-inside space-y-1 mt-1">
+                                            <li>Friction free long engine life</li>
+                                            <li>No abnormal breakdown</li>
+                                        </ul>
+                                    </div>
+
+                                    <p class="text-gray-700">
+                                        <span class="font-semibold text-tvs-red">Replacement:</span> First & every
+                                        alternate service
+                                    </p>
+                                </div>
+
+                                <button onclick="selectPart('TRU4 Engine Oil')"
+                                    class="w-full mt-4 bg-tvs-red text-white py-2 rounded-lg font-semibold hover:bg-red-600 transition">
+                                    Select This Part
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2 - Spark Plug -->
+                    <div class="swiper-slide">
+                        <div class="bg-white rounded-2xl shadow-xl overflow-hidden border-2 border-tvs-pink h-full">
+                            <div class="h-32 bg-white flex items-center justify-center">
+                                <img src="https://i.pinimg.com/736x/53/c3/e2/53c3e24843ca9c8f9e797f501a98b79a.jpg"
+                                    alt="Spark Plug" class="w-32 h-32 object-contain">
+                            </div>
+                            <div class="bg-gradient-to-br from-tvs-pink to-white p-6">
+                                <h3 class="text-xl font-bold text-tvs-blue mb-2">Spark Plug</h3>
+                                <span
+                                    class="inline-block bg-tvs-blue text-white text-xs px-3 py-1 rounded-full mb-3">High
+                                    Performance</span>
+
+                                <div class="space-y-3 text-sm">
+                                    <p class="text-gray-700">
+                                        <span class="font-semibold text-tvs-red">Models:</span> Star City, Jive, XL
+                                        Super, Apache
+                                    </p>
+
+                                    <div class="text-gray-700">
+                                        <p class="font-semibold text-tvs-red">Benefits:</p>
+                                        <ul class="list-disc list-inside space-y-1 mt-1">
+                                            <li>Better mileage</li>
+                                            <li>Easy startability</li>
+                                        </ul>
+                                    </div>
+
+                                    <p class="text-gray-700">
+                                        <span class="font-semibold text-tvs-red">Replacement:</span> 6,000 - 12,000 KMs
+                                    </p>
+                                </div>
+
+                                <button onclick="selectPart('Spark Plug')"
+                                    class="w-full mt-4 bg-tvs-red text-white py-2 rounded-lg font-semibold hover:bg-red-600 transition">
+                                    Select This Part
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3 - Oil Filter -->
+                    <div class="swiper-slide">
+                        <div class="bg-white rounded-2xl shadow-xl overflow-hidden border-2 border-tvs-pink h-full">
+                            <div class="h-32 bg-white flex items-center justify-center">
+                                <img src="https://i.pinimg.com/736x/f8/bc/05/f8bc0506e2e1bd532a1d73aede3d866d.jpg"
+                                    alt="Oil Filter" class="w-32 h-32 object-contain">
+                            </div>
+                            <div class="bg-gradient-to-br from-tvs-pink to-white p-6">
+                                <h3 class="text-xl font-bold text-tvs-blue mb-2">Oil Filter</h3>
+                                <span
+                                    class="inline-block bg-tvs-blue text-white text-xs px-3 py-1 rounded-full mb-3">Premium
+                                    Quality</span>
+
+                                <div class="space-y-3 text-sm">
+                                    <p class="text-gray-700">
+                                        <span class="font-semibold text-tvs-red">Models:</span> Apache Series
+                                    </p>
+
+                                    <div class="text-gray-700">
+                                        <p class="font-semibold text-tvs-red">Benefits:</p>
+                                        <ul class="list-disc list-inside space-y-1 mt-1">
+                                            <li>Long engine life</li>
+                                        </ul>
+                                    </div>
+
+                                    <p class="text-gray-700">
+                                        <span class="font-semibold text-tvs-red">Replacement:</span> Replace with engine
+                                        oil
+                                    </p>
+                                </div>
+
+                                <button onclick="selectPart('Oil Filter')"
+                                    class="w-full mt-4 bg-tvs-red text-white py-2 rounded-lg font-semibold hover:bg-red-600 transition">
+                                    Select This Part
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 4 - Air Filter -->
+                    <div class="swiper-slide">
+                        <div class="bg-white rounded-2xl shadow-xl overflow-hidden border-2 border-tvs-pink h-full">
+                            <div class="h-32 bg-white flex items-center justify-center">
+                                <img src="https://i.pinimg.com/474x/bb/60/d4/bb60d4a8e6ed6469ceb6054dc30b1414.jpg"
+                                    alt="Air Filter" class="w-32 h-32 object-contain">
+                            </div>
+                            <div class="bg-gradient-to-br from-tvs-pink to-white p-6">
+                                <h3 class="text-xl font-bold text-tvs-blue mb-2">Air Filter (Foam)</h3>
+                                <span
+                                    class="inline-block bg-tvs-blue text-white text-xs px-3 py-1 rounded-full mb-3">Dust
+                                    Protection</span>
+
+                                <div class="space-y-3 text-sm">
+                                    <p class="text-gray-700">
+                                        <span class="font-semibold text-tvs-red">Models:</span> Star series, Sport,
+                                        Scooty pep+, Apache
+                                    </p>
+
+                                    <div class="text-gray-700">
+                                        <p class="font-semibold text-tvs-red">Benefits:</p>
+                                        <ul class="list-disc list-inside space-y-1 mt-1">
+                                            <li>Dust protection to engine</li>
+                                            <li>Prevent running off</li>
+                                        </ul>
+                                    </div>
+
+                                    <p class="text-gray-700">
+                                        <span class="font-semibold text-tvs-red">Replacement:</span> 12,000 KMs
+                                    </p>
+                                </div>
+
+                                <button onclick="selectPart('Air Filter (Foam)')"
+                                    class="w-full mt-4 bg-tvs-red text-white py-2 rounded-lg font-semibold hover:bg-red-600 transition">
+                                    Select This Part
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 5 - 12K Kit -->
+                    <div class="swiper-slide">
+                        <div class="bg-white rounded-2xl shadow-xl overflow-hidden border-2 border-tvs-pink h-full">
+                            <div class="h-32 bg-white flex items-center justify-center">
+                                <i class="fas fa-cogs text-6xl text-tvs-blue"></i>
+                            </div>
+                            <div class="bg-gradient-to-br from-tvs-pink to-white p-6">
+                                <h3 class="text-xl font-bold text-tvs-blue mb-2">12K Kit</h3>
+                                <span
+                                    class="inline-block bg-tvs-blue text-white text-xs px-3 py-1 rounded-full mb-3">Performance
+                                    Package</span>
+
+                                <div class="space-y-3 text-sm">
+                                    <p class="text-gray-700">
+                                        <span class="font-semibold text-tvs-red">Models:</span> Wego old, Wego refresh,
+                                        Jupiter
+                                    </p>
+
+                                    <div class="text-gray-700">
+                                        <p class="font-semibold text-tvs-red">Benefits:</p>
+                                        <ul class="list-disc list-inside space-y-1 mt-1">
+                                            <li>Better pickup</li>
+                                            <li>Improved mileage</li>
+                                            <li>Enhanced engine performance</li>
+                                        </ul>
+                                    </div>
+
+                                    <p class="text-gray-700">
+                                        <span class="font-semibold text-tvs-red">Replacement:</span> 12,000 KMs
+                                    </p>
+                                </div>
+
+                                <button onclick="selectPart('12K Kit')"
+                                    class="w-full mt-4 bg-tvs-red text-white py-2 rounded-lg font-semibold hover:bg-red-600 transition">
+                                    Select This Part
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 6 - Fuel Filter -->
+                    <div class="swiper-slide">
+                        <div class="bg-white rounded-2xl shadow-xl overflow-hidden border-2 border-tvs-pink h-full">
+                            <div class="h-32 bg-white flex items-center justify-center">
+                                <img src="https://imgs.search.brave.com/-OGpvYdl5tHJKNNVSf4RqOJsNOVUK1g3FA98obBL2JM/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/c2h1dHRlcnN0b2Nr/LmNvbS9pbWFnZS1p/bGx1c3RyYXRpb24v/ZnVlbC1maWx0ZXIt/Y3V0YXdheS0zZC1y/ZW5kZXJpbmctMjYw/bnctNDE0OTYyMDU5/LmpwZw"
+                                    alt="Fuel Filter" class="w-32 h-32 object-contain">
+                            </div>
+                            <div class="bg-gradient-to-br from-tvs-pink to-white p-6">
+                                <h3 class="text-xl font-bold text-tvs-blue mb-2">Fuel Filter</h3>
+                                <span
+                                    class="inline-block bg-tvs-blue text-white text-xs px-3 py-1 rounded-full mb-3">Emission
+                                    Control</span>
+
+                                <div class="space-y-3 text-sm">
+                                    <p class="text-gray-700">
+                                        <span class="font-semibold text-tvs-red">Models:</span> Moped series
+                                    </p>
+
+                                    <div class="text-gray-700">
+                                        <p class="font-semibold text-tvs-red">Benefits:</p>
+                                        <ul class="list-disc list-inside space-y-1 mt-1">
+                                            <li>Reduces harmful emissions</li>
+                                            <li>Prevents fuel system contamination</li>
+                                            <li>Maintains optimal engine performance</li>
+                                        </ul>
+                                    </div>
+
+                                    <p class="text-gray-700">
+                                        <span class="font-semibold text-tvs-red">Replacement:</span> 12,000 KMs
+                                    </p>
+                                </div>
+
+                                <button onclick="selectPart('Fuel Filter')"
+                                    class="w-full mt-4 bg-tvs-red text-white py-2 rounded-lg font-semibold hover:bg-red-600 transition">
+                                    Select This Part
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+
+                <!-- Add Navigation buttons -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+
+            <div class="text-center mt-12">
+                <p class="text-sm text-gray-600 mb-4">* MRP is subject to change without notice</p>
+                <div class="inline-block bg-tvs-red text-white px-8 py-4 rounded-full text-lg font-bold shadow-lg">
+                    <i class="fas fa-certificate mr-3"></i>
+                    Use genuine parts for better performance
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VAS Section -->
+    <section class="py-16 bg-gradient-to-r from-tvs-blue to-tvs-red">
+        <div class="container mx-auto px-4">
+            <div class="text-center text-white mb-12">
+                <h2 class="text-4xl font-bold mb-6">Value Added Services (VAS)</h2>
+                <div class="bg-white text-tvs-red px-10 py-5 rounded-full inline-block text-3xl font-black shadow-2xl">
+                    SPECIAL OFFER @ ₹171
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <div class="bg-white rounded-2xl p-8 shadow-2xl text-center transform hover:scale-105 transition-all">
+                    <i class="fas fa-shield-alt text-5xl text-tvs-blue mb-6"></i>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Extended Warranty</h3>
+                    <p class="text-gray-600 mb-6">Additional warranty coverage beyond standard period</p>
+                    <ul class="text-sm text-gray-700 space-y-3 mb-8">
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Extended coverage
+                            up to 2 years</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Covers major
+                            components</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Pan India validity
+                        </li>
+                    </ul>
+                    <div class="text-3xl font-bold text-tvs-red">₹171</div>
+                </div>
+
+                <div class="bg-white rounded-2xl p-8 shadow-2xl text-center transform hover:scale-105 transition-all">
+                    <i class="fas fa-tools text-5xl text-green-600 mb-6"></i>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Premium Service Package</h3>
+                    <p class="text-gray-600 mb-6">Comprehensive service with additional benefits</p>
+                    <ul class="text-sm text-gray-700 space-y-3 mb-8">
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Complete vehicle
+                            inspection</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Premium cleaning
+                            service</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Performance
+                            optimization</li>
+                    </ul>
+                    <div class="text-3xl font-bold text-tvs-red">₹171</div>
+                </div>
+
+                <div class="bg-white rounded-2xl p-8 shadow-2xl text-center transform hover:scale-105 transition-all">
+                    <i class="fas fa-headset text-5xl text-purple-600 mb-6"></i>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Quick Response Service</h3>
+                    <p class="text-gray-600 mb-6">Round the clock assistance and support</p>
+                    <ul class="text-sm text-gray-700 space-y-3 mb-8">
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>helpline support
+                        </li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Priority service
+                            booking</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Emergency
+                            assistance</li>
+                    </ul>
+                    <div class="text-3xl font-bold text-tvs-red">₹171</div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="servicesbooking.html"
+                    class="bg-white text-tvs-blue px-12 py-5 rounded-2xl font-bold text-xl hover:bg-gray-100 transition-all transform hover:scale-105 shadow-2xl">
+                    Book VAS Package
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Reviews Section -->
+    <section class="py-16 bg-tvs-pink">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-tvs-blue mb-4">Customer Reviews</h2>
+                <p class="text-gray-600 text-lg">See what our customers say about our services</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto mb-12">
+                <div class="bg-white rounded-2xl p-8 shadow-xl">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 bg-tvs-blue rounded-full flex items-center justify-center">
+                            <i class="fas fa-user text-white text-xl"></i>
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="font-bold text-gray-800 text-lg">Rajesh Kumar</h4>
+                            <div class="flex text-yellow-400 text-lg">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 text-lg leading-relaxed">"Excellent service quality and genuine parts. Very
+                        satisfied with AMC package."</p>
+                </div>
+
+                <div class="bg-white rounded-2xl p-8 shadow-xl">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center">
+                            <i class="fas fa-user text-white text-xl"></i>
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="font-bold text-gray-800 text-lg">Priya Sharma</h4>
+                            <div class="flex text-yellow-400 text-lg">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 text-lg leading-relaxed">"Quick service and professional staff. RSA service
+                        saved me during breakdown."</p>
+                </div>
+
+                <div class="bg-white rounded-2xl p-8 shadow-xl">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center">
+                            <i class="fas fa-user text-white text-xl"></i>
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="font-bold text-gray-800 text-lg">Amit Patel</h4>
+                            <div class="flex text-yellow-400 text-lg">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 text-lg leading-relaxed">"ATW package is great value for money. Highly
+                        recommend their services."</p>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <button onclick="openWhatsAppReview()"
+                    class="bg-green-500 hover:bg-green-600 text-white px-10 py-4 rounded-2xl font-bold text-lg transition-all transform hover:scale-105 shadow-xl">
+                    <i class="fab fa-whatsapp mr-3 text-xl"></i>
+                    Share Your Experience on WhatsApp
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Complaint Section -->
+    <section class="py-16 bg-gradient-to-br from-red-50 to-tvs-pink">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-tvs-red mb-4">Have a Complaint?</h2>
+                <p class="text-gray-600 text-lg">We value your feedback and are here to resolve any issues</p>
+            </div>
+
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-white rounded-2xl shadow-2xl p-10">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                        <div>
+                            <h3 class="text-3xl font-bold text-tvs-red mb-6">Quick Complaint Resolution</h3>
+                            <p class="text-gray-700 mb-8 text-lg leading-relaxed">
+                                Our customer service team is dedicated to resolving your concerns promptly.
+                                Share your complaint via WhatsApp for immediate assistance.
+                            </p>
+
+                            <div class="space-y-6 mb-8">
+                                <div class="flex items-center space-x-4 p-4 bg-tvs-pink rounded-xl">
+                                    <i class="fas fa-clock text-tvs-blue text-2xl"></i>
+                                    <span class="text-gray-700 font-semibold">Quick response within 2 hours</span>
+                                </div>
+                                <div class="flex items-center space-x-4 p-4 bg-tvs-pink rounded-xl">
+                                    <i class="fas fa-user-tie text-green-600 text-2xl"></i>
+                                    <span class="text-gray-700 font-semibold">Dedicated complaint resolution team</span>
+                                </div>
+                                <div class="flex items-center space-x-4 p-4 bg-tvs-pink rounded-xl">
+                                    <i class="fas fa-check-circle text-purple-600 text-2xl"></i>
+                                    <span class="text-gray-700 font-semibold">Follow-up until resolution</span>
+                                </div>
+                            </div>
+
+                            <button onclick="openWhatsAppComplaint()"
+                                class="bg-tvs-red hover:bg-red-600 text-white px-10 py-4 rounded-2xl font-bold text-lg transition-all transform hover:scale-105 shadow-xl">
+                                <i class="fab fa-whatsapp mr-3 text-xl"></i>
+                                Submit Complaint via WhatsApp
+                            </button>
+                        </div>
+
+                        <div class="text-center">
+                            <i class="fas fa-headset text-8xl text-tvs-red mb-6"></i>
+                            <h4 class="text-2xl font-bold text-gray-800 mb-4">Quick & Reliable Support</h4>
+                            <p class="text-gray-600 text-lg">We're here to help you anytime</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Appointment Booking Section -->
+    <section class="py-16 bg-gradient-to-br from-tvs-blue to-blue-600">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-white mb-4">Book Your Service Appointment</h2>
+                <p class="text-blue-100 text-lg">Schedule your service at your convenience</p>
+            </div>
+
+            <div class="max-w-2xl mx-auto">
+                <div class="bg-white rounded-2xl shadow-2xl p-10">
+                    <form id="appointmentForm" class="space-y-6">
+                        <div>
+                            <label for="customerName" class="block text-sm font-bold text-gray-700 mb-3">
+                                Full Name *
+                            </label>
+                            <input type="text" id="customerName" name="customerName" required
+                                class="w-full px-6 py-4 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-tvs-blue focus:border-transparent text-lg"
+                                placeholder="Enter your full name">
+                        </div>
+
+                        <div>
+                            <label for="phoneNumber" class="block text-sm font-bold text-gray-700 mb-3">
+                                Phone Number *
+                            </label>
+                            <input type="tel" id="phoneNumber" name="phoneNumber" required
+                                class="w-full px-6 py-4 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-tvs-blue focus:border-transparent text-lg"
+                                placeholder="Enter your phone number">
+                        </div>
+
+                        <div>
+                            <label for="vehicleModel" class="block text-sm font-bold text-gray-700 mb-3">
+                                Vehicle Model
+                            </label>
+                            <select id="vehicleModel" name="vehicleModel"
+                                class="w-full px-6 py-4 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-tvs-blue focus:border-transparent text-lg">
+                                <option value="">Select your vehicle model</option>
+                                <option value="Jupiter">Jupiter</option>
+                                <option value="Ntorq">Ntorq</option>
+                                <option value="Apache">Apache</option>
+                                <option value="Star City">Star City</option>
+                                <option value="Radeon">Radeon</option>
+                                <option value="Scooty Pep+">Scooty Pep+</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="serviceType" class="block text-sm font-bold text-gray-700 mb-3">
+                                Service Type
+                            </label>
+                            <select id="serviceType" name="serviceType"
+                                class="w-full px-6 py-4 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-tvs-blue focus:border-transparent text-lg">
+                                <option value="">Select service type</option>
+                                <option value="Regular Service">Regular Service</option>
+                                <option value="AMC">Annual Maintenance Contract</option>
+                                <option value="RSA">Road Side Assistance</option>
+                                <option value="ATW">Anytime Warranty</option>
+                                <option value="Parts Replacement">Parts Replacement</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="preferredDate" class="block text-sm font-bold text-gray-700 mb-3">
+                                Preferred Date
+                            </label>
+                            <input type="date" id="preferredDate" name="preferredDate"
+                                class="w-full px-6 py-4 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-tvs-blue focus:border-transparent text-lg">
+                        </div>
+
+                        <div>
+                            <label for="message" class="block text-sm font-bold text-gray-700 mb-3">
+                                Additional Message
+                            </label>
+                            <textarea id="message" name="message" rows="4"
+                                class="w-full px-6 py-4 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-tvs-blue focus:border-transparent text-lg"
+                                placeholder="Any specific requirements or issues..."></textarea>
+                        </div>
+
+                        <button type="submit"
+                            class="w-full bg-tvs-red hover:bg-red-600 text-white px-10 py-5 rounded-xl font-bold text-xl transition-all transform hover:scale-105 shadow-xl">
+                            <i class="fas fa-calendar-check mr-3"></i>
+                            Check Service Availability
+                        </button>
+                    </form>
+                </div>
+
+                <div class="text-center mt-10">
+                    <p class="text-blue-100 mb-6 text-lg">Or call us directly for immediate assistance</p>
+                    <a href="tel:+919124569270"
+                        class="bg-green-500 hover:bg-green-600 text-white px-10 py-4 rounded-2xl font-bold text-lg transition-all transform hover:scale-105 shadow-xl inline-block">
+                        <i class="fas fa-phone mr-3"></i>
+                        Call +91 91245 69270
                     </a>
                 </div>
-
-                <div class="relative">
-                    <img src="https://www.tvsmotor.com/our-service/our-products-and-offerings/-/media/Corporate/ServicePage/TVS-Genuine-parts--oil-new.webp?iar=0&hash=CF907287315C95D64668B716A02B7F55"
-                        alt="TVS Genuine Parts" class="rounded-lg shadow-xl w-full">
-                    <div
-                        class="absolute -top-4 -right-4 bg-tvs-red text-white px-4 py-2 rounded-full font-bold floating-animation">
-                        GENUINE
-                    </div>
-                </div>
             </div>
         </div>
     </section>
-
-    <!-- Customised Care Section -->
-    <section id="services" class="py-16 bg-white">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-800 mb-4">Customised Care For All Your Needs</h2>
-                <div class="w-24 h-1 bg-tvs-blue mx-auto"></div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-6 mb-16">
-                <div class="service-card bg-white border-2 border-blue-200 hover:border-tvs-blue p-6 text-center">
-                    <i class="fas fa-wrench service-icon text-tvs-blue"></i>
-                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Service Workshop</h3>
-                    <p class="text-sm text-gray-600">Open All 7 Days</p>
-                </div>
-
-                <div class="service-card bg-white border-2 border-blue-200 hover:border-tvs-blue p-6 text-center">
-                    <i class="fas fa-motorcycle service-icon text-green-600"></i>
-                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Service Pick Up &</h3>
-                    <p class="text-sm text-gray-600">Drop Facility</p>
-                </div>
-
-                <div class="service-card bg-white border-2 border-blue-200 hover:border-tvs-blue p-6 text-center">
-                    <i class="fas fa-certificate service-icon text-orange-600"></i>
-                    <h3 class="text-lg font-semibold text-gray-800 mb-2">TVS Genuine Parts</h3>
-                    <p class="text-sm text-gray-600">& Oil</p>
-                </div>
-
-                <div class="service-card bg-white border-2 border-blue-200 hover:border-tvs-blue p-6 text-center">
-                    <i class="fas fa-handshake service-icon text-purple-600"></i>
-                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Annual Maintenance</h3>
-                    <p class="text-sm text-gray-600">Plan Coverage</p>
-                </div>
-
-                <div class="service-card bg-white border-2 border-blue-200 hover:border-tvs-blue p-6 text-center">
-                    <i class="fas fa-shield-alt service-icon text-red-600"></i>
-                    <h3 class="text-lg font-semibold text-gray-800 mb-2">5 Years Standard</h3>
-                    <p class="text-sm text-gray-600">Warranty</p>
-                </div>
-
-                <div class="service-card bg-white border-2 border-blue-200 hover:border-tvs-blue p-6 text-center">
-                    <i class="fas fa-clock service-icon text-yellow-600"></i>
-                    <h3 class="text-lg font-semibold text-gray-800 mb-2">24 x 7 Assistance</h3>
-                    <p class="text-sm text-gray-600">Through RSA</p>
-                </div>
-            </div>
-
-            <!-- User Manual Section -->
-            <div style="background: url(images/User-manual-Dweb.webp);"
-                class="bg-gradient-to-r from-gray-800 to-gray-900 w-full h-full object-cover rounded-xl overflow-hidden">
-                <div class="grid grid-cols-1 lg:grid-cols-2 items-center">
-                    <div class="p-8 lg:p-20 text-white">
-                        <h3 class="text-3xl font-bold mb-4">User Manual</h3>
-                        <p class="text-lg text-gray-300 mb-6">
-                            Get your vehicle's service-related information like technical features, warranty information
-                            and much more!
-                        </p>
-                       <a href="servicesbooking.html"
-                                class="bg-tvs-blue hover:bg-blue-800 text-white px-8 py-3 rounded-lg font-semibold transition-colors">
-                                Book Services
-                            </a>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-
-
 
     <!-- Contact Section -->
-    <section id="contact" class="py-16 bg-gray-50">
+    <section id="contact" class="py-16 bg-tvs-cream">
         <div class="container mx-auto px-4">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-800 mb-4">Get In Touch</h2>
-                <div class="w-24 h-1 bg-blue-600 mx-auto"></div>
+                <h2 class="text-4xl font-bold text-tvs-blue mb-4">Get In Touch</h2>
+                <div class="w-32 h-2 bg-tvs-red mx-auto rounded-full"></div>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Phone -->
-                <div class="card-hover bg-white p-6 rounded-lg shadow-lg text-center">
-                    <i class="fas fa-phone text-3xl text-blue-600 mb-4"></i>
-                    <h4 class="font-semibold text-gray-800 mb-2">Call Us</h4>
-                    <p class="text-blue-600 font-bold text-lg">+91 91245 69270</p>
-                    <p class="text-gray-600 text-sm">We’re available 24/7</p>
+                <div class="card-hover bg-white p-8 rounded-2xl shadow-xl text-center">
+                    <i class="fas fa-phone text-5xl text-tvs-blue mb-6"></i>
+                    <h4 class="font-bold text-gray-800 mb-4 text-xl">Call Us</h4>
+                    <p class="text-tvs-blue font-bold text-2xl">+91 91245 69270</p>
+                    <p class="text-gray-600 text-lg">We're available 24/7</p>
                 </div>
 
                 <!-- Email -->
-                <div class="card-hover bg-white p-6 rounded-lg shadow-lg text-center">
-                    <i class="fas fa-envelope text-3xl text-red-500 mb-4"></i>
-                    <h4 class="font-semibold text-gray-800 mb-2">Email Us</h4>
-                    <p class="text-red-500 font-bold text-lg">tvsarya@gmail.com</p>
-                    <p class="text-gray-600 text-sm">Send us your query anytime</p>
+                <div class="card-hover bg-white p-8 rounded-2xl shadow-xl text-center">
+                    <i class="fas fa-envelope text-5xl text-tvs-red mb-6"></i>
+                    <h4 class="font-bold text-gray-800 mb-4 text-xl">Email Us</h4>
+                    <p class="text-tvs-red font-bold text-2xl">tvsarya@gmail.com</p>
+                    <p class="text-gray-600 text-lg">Send us your query anytime</p>
                 </div>
 
                 <!-- Address -->
-                <div class="card-hover bg-white p-6 rounded-lg shadow-lg text-center">
-                    <i class="fas fa-map-marker-alt text-3xl text-green-600 mb-4"></i>
-                    <h4 class="font-semibold text-gray-800 mb-2">Visit Us</h4>
-                    <p class="text-gray-700 font-semibold">Aska Road</p>
-                    <p class="text-gray-700 font-semibold">Khodasingh, Berhampur, Odisha</p>
-                    <p class="text-gray-600 text-sm">Open 7 days a week</p>
+                <div class="card-hover bg-white p-8 rounded-2xl shadow-xl text-center">
+                    <i class="fas fa-map-marker-alt text-5xl text-green-600 mb-6"></i>
+                    <h4 class="font-bold text-gray-800 mb-4 text-xl">Visit Us</h4>
+                    <p class="text-gray-700 font-bold text-lg">Aska Road</p>
+                    <p class="text-gray-700 font-bold text-lg">Khodasingh, Berhampur, Odisha</p>
+                    <p class="text-gray-600 text-lg">Open 7 days a week</p>
                 </div>
             </div>
         </div>
     </section>
 
-
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
+    <footer class="bg-gray-900 text-white py-16">
         <div class="max-w-7xl mx-auto px-4">
-            <div class="grid md:grid-cols-3 gap-8">
+            <div class="grid md:grid-cols-3 gap-12">
                 <div>
-                    <h3 class="text-2xl font-bold mb-4">Arya Mototech</h3>
-                    <p class="text-gray-400">Authorized TVS Dealer in Berhampur specializing in sales, service, and
-                        spare parts.</p>
+                    <h3 class="text-3xl font-bold mb-6">Arya Mototech</h3>
+                    <p class="text-gray-400 text-lg leading-relaxed">Authorized TVS Dealer in Berhampur specializing in
+                        sales, service, and spare parts.</p>
                 </div>
                 <div>
-                    <h4 class="text-lg font-semibold mb-4">Contact Info</h4>
-                    <p class="text-gray-400 mb-2"><i class="fas fa-map-marker-alt mr-2"></i>Aska Road | Khodasingh
-                        Berhampur, Odisha</p>
-                    <p class="text-gray-400 mb-2"><i class="fas fa-phone mr-2"></i>+91 91245 69270</p>
-                    <p class="text-gray-400"><i class="fas fa-envelope mr-2"></i>tvsarya@gmail.com</p>
+                    <h4 class="text-2xl font-bold mb-6">Contact Info</h4>
+                    <p class="text-gray-400 mb-4 text-lg"><i class="fas fa-map-marker-alt mr-3"></i>Aska Road |
+                        Khodasingh Berhampur, Odisha</p>
+                    <p class="text-gray-400 mb-4 text-lg"><i class="fas fa-phone mr-3"></i>+91 91245 69270</p>
+                    <p class="text-gray-400 text-lg"><i class="fas fa-envelope mr-3"></i>tvsarya@gmail.com</p>
                 </div>
                 <div>
-                    <h4 class="text-lg font-semibold mb-4">Follow Us</h4>
-                    <div class="flex space-x-4">
-                        <a href="https://www.facebook.com/tvsdealerberhampur" class="text-gray-400 hover:text-white"><i
-                                class="fab fa-facebook-f text-2xl"></i></a>
+                    <h4 class="text-2xl font-bold mb-6">Follow Us</h4>
+                    <div class="flex space-x-6">
+                        <a href="https://www.facebook.com/tvsdealerberhampur"
+                            class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-facebook-f text-3xl"></i>
+                        </a>
                         <a href="https://www.instagram.com/aryamototechpvtltd1?igsh=MWd2aXJtN3hoZWl4aQ=="
-                            class="text-gray-400 hover:text-white"><i class="fab fa-instagram text-2xl"></i></a>
+                            class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-instagram text-3xl"></i>
+                        </a>
                     </div>
                 </div>
             </div>
-            <div class="border-t border-gray-800 mt-8 pt-8 text-center">
-                <p class="text-gray-400">All rights reserved &copy; 2025 Arya Mototech</p>
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center">
+                <p class="text-gray-400 text-lg">All rights reserved &copy; 2025 Arya Mototech</p>
             </div>
         </div>
     </footer>
 
+    <!-- Parts Inquiry Modal -->
+    <div id="partsModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="bg-white rounded-2xl p-8 max-w-md w-full">
+                <h3 class="text-2xl font-bold text-tvs-blue mb-6">Request Parts via Email</h3>
+                <form id="partsForm">
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-bold text-gray-700 mb-2">Your Name *</label>
+                            <input type="text" id="partCustomerName" required
+                                class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-tvs-blue focus:border-transparent">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold text-gray-700 mb-2">Email *</label>
+                            <input type="email" id="partCustomerEmail" required
+                                class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-tvs-blue focus:border-transparent">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold text-gray-700 mb-2">Phone Number *</label>
+                            <input type="tel" id="partCustomerPhone" required
+                                class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-tvs-blue focus:border-transparent">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold text-gray-700 mb-2">Vehicle Model</label>
+                            <input type="text" id="partVehicleModel"
+                                class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-tvs-blue focus:border-transparent">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold text-gray-700 mb-2">Required Parts *</label>
+                            <textarea id="partRequiredParts" required rows="3"
+                                class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-tvs-blue focus:border-transparent"
+                                placeholder="List the parts you need..."></textarea>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold text-gray-700 mb-2">Additional Message</label>
+                            <textarea id="partMessage" rows="3"
+                                class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-tvs-blue focus:border-transparent"
+                                placeholder="Any additional requirements..."></textarea>
+                        </div>
+                    </div>
+                    <div class="flex space-x-4 mt-6">
+                        <button type="submit"
+                            class="flex-1 bg-tvs-blue text-white py-3 rounded-lg font-bold hover:bg-blue-800 transition">
+                            Send Email
+                        </button>
+                        <button type="button" onclick="closePartsModal()"
+                            class="flex-1 bg-gray-300 text-gray-700 py-3 rounded-lg font-bold hover:bg-gray-400 transition">
+                            Cancel
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
     <!-- JavaScript -->
     <script>
+        // Initialize Swiper
+        var swiper = new Swiper(".partsSwiper", {
+            effect: "coverflow",
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: "auto",
+            coverflowEffect: {
+                rotate: 50,
+                stretch: 0,
+                depth: 100,
+                modifier: 1,
+                slideShadows: true,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            loop: true,
+        });
+
         // Tab functionality for services
         document.querySelectorAll('.tab-button').forEach(button => {
             button.addEventListener('click', function () {
                 const tabId = this.getAttribute('data-tab');
 
                 // Remove active class from all buttons and contents
-                document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+                document.querySelectorAll('.tab-button').forEach(btn => {
+                    btn.classList.remove('active', 'border-tvs-blue', 'text-tvs-blue');
+                    btn.classList.add('border-transparent', 'text-gray-700');
+                });
                 document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
 
                 // Add active class to clicked button and corresponding content
-                this.classList.add('active');
+                this.classList.add('active', 'border-tvs-blue', 'text-tvs-blue');
+                this.classList.remove('border-transparent', 'text-gray-700');
                 document.getElementById(tabId).classList.add('active');
             });
         });
 
-        // Tab functionality for care tips
-        document.querySelectorAll('.care-tab-button').forEach(button => {
-            button.addEventListener('click', function () {
-                const tabId = this.getAttribute('data-care-tab');
+        // Parts inquiry functions
+        let selectedParts = [];
 
-                // Remove active class from all buttons and contents
-                document.querySelectorAll('.care-tab-button').forEach(btn => {
-                    btn.classList.remove('active', 'text-tvs-blue', 'border-tvs-blue');
-                    btn.classList.add('text-gray-500', 'border-transparent');
-                });
-                document.querySelectorAll('.care-tab-content').forEach(content => content.classList.add('hidden'));
+        function openPartsInquiry() {
+            document.getElementById('partsModal').classList.remove('hidden');
+            if (selectedParts.length > 0) {
+                document.getElementById('partRequiredParts').value = selectedParts.join(', ');
+            }
+        }
 
-                // Add active class to clicked button and corresponding content
-                this.classList.add('active', 'text-tvs-blue', 'border-tvs-blue');
-                this.classList.remove('text-gray-500', 'border-transparent');
-                document.getElementById(tabId).classList.remove('hidden');
-            });
+        function closePartsModal() {
+            document.getElementById('partsModal').classList.add('hidden');
+            selectedParts = [];
+        }
+
+        function selectPart(partName) {
+            if (!selectedParts.includes(partName)) {
+                selectedParts.push(partName);
+                alert(`${partName} added to your inquiry list!`);
+            } else {
+                alert(`${partName} is already in your inquiry list!`);
+            }
+        }
+
+        // Parts form submission
+        document.getElementById('partsForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const formData = new FormData(this);
+            const name = document.getElementById('partCustomerName').value;
+            const email = document.getElementById('partCustomerEmail').value;
+            const phone = document.getElementById('partCustomerPhone').value;
+            const vehicle = document.getElementById('partVehicleModel').value;
+            const parts = document.getElementById('partRequiredParts').value;
+            const message = document.getElementById('partMessage').value;
+
+            // Create email content
+            const emailSubject = encodeURIComponent('TVS Parts Inquiry - ' + name);
+            const emailBody = encodeURIComponent(`
+Parts Inquiry Details:
+
+Name: ${name}
+Email: ${email}
+Phone: ${phone}
+Vehicle Model: ${vehicle || 'Not specified'}
+Required Parts: ${parts}
+Additional Message: ${message || 'None'}
+
+Please provide availability and pricing for the requested parts.
+
+Best regards,
+${name}
+            `);
+
+            // Open email client
+            window.location.href = `mailto:tvsarya@gmail.com?subject=${emailSubject}&body=${emailBody}`;
+
+            closePartsModal();
+            alert('Email client opened! Please send the email to complete your parts inquiry.');
         });
+
+
+
+
+
+
+
+
+        // WhatsApp Review Function
+        function openWhatsAppReview() {
+            const message = encodeURIComponent(`Hi! I would like to share my experience with your TVS service:
+
+Please let me know how you found our service and what we can improve.`);
+            window.open(`https://wa.me/+919348148310?text=${message}`, '_blank');
+        }
+
+        // WhatsApp Complaint Function
+        function openWhatsAppComplaint() {
+            const message = encodeURIComponent(`Hi! I have a complaint regarding your TVS service:
+
+Please describe your issue and we will resolve it promptly.`);
+            window.open(`https://wa.me/+919348148310?text=${message}`, '_blank');
+        }
+
+        // Appointment Form Submission
+        document.getElementById('appointmentForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const formData = new FormData(this);
+            const name = formData.get('customerName');
+            const phone = formData.get('phoneNumber');
+            const vehicle = formData.get('vehicleModel');
+            const service = formData.get('serviceType');
+            const date = formData.get('preferredDate');
+            const message = formData.get('message');
+
+            const whatsappMessage = encodeURIComponent(`Service Appointment Request:
+
+Name: ${name}
+Phone: ${phone}
+Vehicle Model: ${vehicle || 'Not specified'}
+Service Type: ${service || 'Not specified'}
+Preferred Date: ${date || 'Not specified'}
+Message: ${message || 'None'}
+
+Please let me know when the service slot is available.`);
+
+            window.open(`https://wa.me/+919348148310?text=${whatsappMessage}`, '_blank');
+        });
+
+
 
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -671,28 +1384,14 @@
             });
         });
 
-        // Book Service button functionality
-        document.querySelectorAll('button').forEach(button => {
-            if (button.textContent.includes('Book Service')) {
-                button.addEventListener('click', function () {
-                    // Simulate booking process
-                    this.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Booking...';
-                    this.disabled = true;
+        // Set minimum date to today for appointment booking
+        document.getElementById('preferredDate').min = new Date().toISOString().split('T')[0];
 
-                    setTimeout(() => {
-                        alert('Service booking initiated! You will receive a confirmation call shortly.');
-                        this.innerHTML = 'Book Service';
-                        this.disabled = false;
-                    }, 2000);
-                });
+        // Close modal when clicking outside
+        document.getElementById('partsModal').addEventListener('click', function (e) {
+            if (e.target === this) {
+                closePartsModal();
             }
-        });
-
-        // WhatsApp integration
-        document.querySelector('.whatsapp-btn').addEventListener('click', function (e) {
-            e.preventDefault();
-            const message = encodeURIComponent('Hi! I would like to book a service for my TVS vehicle.');
-            window.open(`https://wa.me/919876543210?text=${message}`, '_blank');
         });
     </script>
 </body>
