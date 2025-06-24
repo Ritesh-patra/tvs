@@ -255,6 +255,61 @@
         .border-tvs-blue {
             border-color: #093FB4;
         }
+
+        .service-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+
+        .product-circle {
+            background: linear-gradient(135deg, #1e40af, #3b82f6);
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, #1e40af, #dc2626);
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .whatsapp-btn {
+            background: #25D366;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-btn:hover {
+            background: #128C7E;
+            transform: scale(1.02);
+        }
+
+        .whatsapp-btn.sending {
+            background: #f59e0b !important;
+        }
+
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1001;
+            background: #16a34a;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .notification.show {
+            transform: translateX(0);
+        }
     </style>
 
     <script>
@@ -316,7 +371,12 @@
                 <div class="overflow-x-auto scrollbar-hide">
                     <div class="flex flex-nowrap justify-start md:justify-center gap-4 mb-8 min-w-max">
                         <button
-                            class="tab-button active px-8 py-4 text-gray-700 border-b-4 border-tvs-blue whitespace-nowrap font-semibold rounded-t-lg bg-white shadow-md"
+                            class="tab-button active px-8 py-4 text-gray-700 border-b-4 border-transparent whitespace-nowrap font-semibold rounded-t-lg bg-white shadow-md"
+                            data-tab="atw">
+                            Anytime Warranty (ATW)
+                        </button>
+                        <button
+                            class="tab-button  px-8 py-4 text-gray-700 border-b-4 border-tvs-blue whitespace-nowrap font-semibold rounded-t-lg bg-white shadow-md"
                             data-tab="amc">
                             Annual Maintenance Contract (AMC)
                         </button>
@@ -325,11 +385,7 @@
                             data-tab="rsa">
                             Road Side Assistance (RSA)
                         </button>
-                        <button
-                            class="tab-button px-8 py-4 text-gray-700 border-b-4 border-transparent whitespace-nowrap font-semibold rounded-t-lg bg-white shadow-md"
-                            data-tab="atw">
-                            Anytime Warranty (ATW)
-                        </button>
+
                     </div>
                 </div>
             </div>
@@ -337,7 +393,7 @@
             <!-- Tab Contents -->
             <div class="max-w-6xl mx-auto">
                 <!-- AMC Tab -->
-                <div id="amc" class="tab-content active">
+                <div id="amc" class="tab-content ">
                     <div class="bg-white rounded-2xl shadow-xl p-8">
                         <div class="flex flex-col-reverse lg:grid lg:grid-cols-2 gap-12 items-center">
                             <div>
@@ -441,7 +497,7 @@
                 </div>
 
                 <!-- ATW Tab -->
-                <div id="atw" class="tab-content">
+                <div id="atw" class="tab-content active">
                     <div class="bg-white rounded-2xl shadow-xl p-8">
                         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                             <div>
@@ -532,10 +588,7 @@
                                     </p>
                                 </div>
 
-                                <button onclick="selectPart('TRU4 Engine Oil')"
-                                    class="w-full mt-4 bg-tvs-red text-white py-2 rounded-lg font-semibold hover:bg-red-600 transition">
-                                    Select This Part
-                                </button>
+
                             </div>
                         </div>
                     </div>
@@ -572,10 +625,7 @@
                                     </p>
                                 </div>
 
-                                <button onclick="selectPart('Spark Plug')"
-                                    class="w-full mt-4 bg-tvs-red text-white py-2 rounded-lg font-semibold hover:bg-red-600 transition">
-                                    Select This Part
-                                </button>
+
                             </div>
                         </div>
                     </div>
@@ -611,10 +661,7 @@
                                     </p>
                                 </div>
 
-                                <button onclick="selectPart('Oil Filter')"
-                                    class="w-full mt-4 bg-tvs-red text-white py-2 rounded-lg font-semibold hover:bg-red-600 transition">
-                                    Select This Part
-                                </button>
+
                             </div>
                         </div>
                     </div>
@@ -651,10 +698,7 @@
                                     </p>
                                 </div>
 
-                                <button onclick="selectPart('Air Filter (Foam)')"
-                                    class="w-full mt-4 bg-tvs-red text-white py-2 rounded-lg font-semibold hover:bg-red-600 transition">
-                                    Select This Part
-                                </button>
+
                             </div>
                         </div>
                     </div>
@@ -691,10 +735,7 @@
                                     </p>
                                 </div>
 
-                                <button onclick="selectPart('12K Kit')"
-                                    class="w-full mt-4 bg-tvs-red text-white py-2 rounded-lg font-semibold hover:bg-red-600 transition">
-                                    Select This Part
-                                </button>
+
                             </div>
                         </div>
                     </div>
@@ -731,10 +772,7 @@
                                     </p>
                                 </div>
 
-                                <button onclick="selectPart('Fuel Filter')"
-                                    class="w-full mt-4 bg-tvs-red text-white py-2 rounded-lg font-semibold hover:bg-red-600 transition">
-                                    Select This Part
-                                </button>
+
                             </div>
                         </div>
                     </div>
@@ -759,67 +797,420 @@
     </section>
 
     <!-- VAS Section -->
-    <section class="py-16 bg-gradient-to-r from-tvs-blue to-tvs-red">
+    <section class="py-16 bg-gradient-to-r from-blue-600 to-red-600">
         <div class="container mx-auto px-4">
+            <!-- Header -->
             <div class="text-center text-white mb-12">
-                <h2 class="text-4xl font-bold mb-6">Value Added Services (VAS)</h2>
-                <div class="bg-white text-tvs-red px-10 py-5 rounded-full inline-block text-3xl font-black shadow-2xl">
+                <h2 class="text-4xl font-bold mb-6">Service Consumables & VAS</h2>
+                <div class="bg-white text-red-600 px-10 py-5 rounded-full inline-block text-3xl font-black shadow-2xl">
                     SPECIAL OFFER @ ₹171
                 </div>
+                <p class="mt-4 text-lg opacity-90">Professional automotive care products for optimal performance</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                <div class="bg-white rounded-2xl p-8 shadow-2xl text-center transform hover:scale-105 transition-all">
-                    <i class="fas fa-shield-alt text-5xl text-tvs-blue mb-6"></i>
-                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Extended Warranty</h3>
-                    <p class="text-gray-600 mb-6">Additional warranty coverage beyond standard period</p>
-                    <ul class="text-sm text-gray-700 space-y-3 mb-8">
-                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Extended coverage
-                            up to 2 years</li>
-                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Covers major
-                            components</li>
-                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Pan India validity
+            <!-- Services Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+
+                <!-- Service Card 1: 4-Way Rust Protection -->
+                <div class="service-card bg-white rounded-2xl p-6 shadow-2xl">
+                    <div class="text-center mb-6">
+                        <div class="bg-red-600 text-white px-4 py-2 rounded-lg inline-block text-sm font-bold mb-4">
+                            4-WAY RUST PROTECTION
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">4-Way Rust Protection</h3>
+                        <p class="text-gray-600 text-sm">Complete rust prevention and treatment solution</p>
+                    </div>
+
+                    <div class="flex justify-center items-center gap-4 mb-6">
+                        <div class="text-center">
+                            <div
+                                class="w-20 h-20 bg-gray-100 rounded-lg mb-2 flex items-center justify-center border-2 border-red-200">
+                                <i class="fas fa-tools text-2xl text-gray-400"></i>
+                            </div>
+                            <span class="text-xs font-semibold text-red-600">BEFORE</span>
+                        </div>
+
+                        <div class="flex-1 flex items-center justify-center">
+                            <div
+                                class="w-16 h-16 product-circle rounded-full flex items-center justify-center shadow-lg">
+                                <i class="fas fa-spray-can text-white text-xl"></i>
+                            </div>
+                        </div>
+
+                        <div class="text-center">
+                            <div
+                                class="w-20 h-20 bg-gray-100 rounded-lg mb-2 flex items-center justify-center border-2 border-green-200">
+                                <i class="fas fa-shield-alt text-2xl text-green-500"></i>
+                            </div>
+                            <span class="text-xs font-semibold text-green-600">AFTER</span>
+                        </div>
+                    </div>
+
+                    <ul class="text-sm text-gray-700 space-y-2 mb-6">
+                        <li class="flex items-center">
+                            <div class="w-2 h-2 bg-green-500 rounded-full mr-3 flex-shrink-0"></div>
+                            Lubricates and penetrates rust
+                        </li>
+                        <li class="flex items-center">
+                            <div class="w-2 h-2 bg-green-500 rounded-full mr-3 flex-shrink-0"></div>
+                            All-round use for general purposes
+                        </li>
+                        <li class="flex items-center">
+                            <div class="w-2 h-2 bg-green-500 rounded-full mr-3 flex-shrink-0"></div>
+                            Prevents moisture damage
                         </li>
                     </ul>
-                    <div class="text-3xl font-bold text-tvs-red">₹171</div>
+
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-red-600 mb-4">₹171</div>
+                        <button
+                            class="service-btn whatsapp-btn text-white px-6 py-2 rounded-lg font-semibold w-full flex items-center justify-center gap-2"
+                            data-service="4-Way Rust Protection" data-price="₹171"
+                            data-features="Lubricates and penetrates rust, All-round use for general purposes, Prevents moisture damage">
+                            <i class="fab fa-whatsapp text-lg"></i>
+                            <span class="btn-text">Add to Service</span>
+                        </button>
+                    </div>
                 </div>
 
-                <div class="bg-white rounded-2xl p-8 shadow-2xl text-center transform hover:scale-105 transition-all">
-                    <i class="fas fa-tools text-5xl text-green-600 mb-6"></i>
-                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Premium Service Package</h3>
-                    <p class="text-gray-600 mb-6">Comprehensive service with additional benefits</p>
-                    <ul class="text-sm text-gray-700 space-y-3 mb-8">
-                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Complete vehicle
-                            inspection</li>
-                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Premium cleaning
-                            service</li>
-                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Performance
-                            optimization</li>
-                    </ul>
-                    <div class="text-3xl font-bold text-tvs-red">₹171</div>
-                </div>
+                <!-- Service Card 2: Brake Cleaner Pro -->
+                <div class="service-card bg-white rounded-2xl p-6 shadow-2xl">
+                    <div class="text-center mb-6">
+                        <div class="bg-red-600 text-white px-4 py-2 rounded-lg inline-block text-sm font-bold mb-4">
+                            BRAKE CLEANER PRO
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Brake Cleaner Pro</h3>
+                        <p class="text-gray-600 text-sm">Professional brake cleaning and maintenance</p>
+                    </div>
 
-                <div class="bg-white rounded-2xl p-8 shadow-2xl text-center transform hover:scale-105 transition-all">
-                    <i class="fas fa-headset text-5xl text-purple-600 mb-6"></i>
-                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Quick Response Service</h3>
-                    <p class="text-gray-600 mb-6">Round the clock assistance and support</p>
-                    <ul class="text-sm text-gray-700 space-y-3 mb-8">
-                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>helpline support
+                    <div class="flex justify-center items-center gap-4 mb-6">
+                        <div class="text-center">
+                            <div
+                                class="w-20 h-20 bg-gray-100 rounded-lg mb-2 flex items-center justify-center border-2 border-red-200">
+                                <i class="fas fa-exclamation-triangle text-2xl text-red-400"></i>
+                            </div>
+                            <span class="text-xs font-semibold text-red-600">BEFORE</span>
+                        </div>
+
+                        <div class="flex-1 flex items-center justify-center">
+                            <div
+                                class="w-16 h-16 product-circle rounded-full flex items-center justify-center shadow-lg">
+                                <i class="fas fa-spray-can text-white text-xl"></i>
+                            </div>
+                        </div>
+
+                        <div class="text-center">
+                            <div
+                                class="w-20 h-20 bg-gray-100 rounded-lg mb-2 flex items-center justify-center border-2 border-green-200">
+                                <i class="fas fa-check-circle text-2xl text-green-500"></i>
+                            </div>
+                            <span class="text-xs font-semibold text-green-600">AFTER</span>
+                        </div>
+                    </div>
+
+                    <ul class="text-sm text-gray-700 space-y-2 mb-6">
+                        <li class="flex items-center">
+                            <div class="w-2 h-2 bg-green-500 rounded-full mr-3 flex-shrink-0"></div>
+                            Better braking efficiency
                         </li>
-                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Priority service
-                            booking</li>
-                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Emergency
-                            assistance</li>
+                        <li class="flex items-center">
+                            <div class="w-2 h-2 bg-green-500 rounded-full mr-3 flex-shrink-0"></div>
+                            Prolongs brake lifespan
+                        </li>
+                        <li class="flex items-center">
+                            <div class="w-2 h-2 bg-green-500 rounded-full mr-3 flex-shrink-0"></div>
+                            Fast cleaning without residue
+                        </li>
                     </ul>
-                    <div class="text-3xl font-bold text-tvs-red">₹171</div>
+
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-red-600 mb-4">₹171</div>
+                        <button
+                            class="service-btn whatsapp-btn text-white px-6 py-2 rounded-lg font-semibold w-full flex items-center justify-center gap-2"
+                            data-service="Brake Cleaner Pro" data-price="₹171"
+                            data-features="Better braking efficiency, Prolongs brake lifespan, Fast cleaning without residue">
+                            <i class="fab fa-whatsapp text-lg"></i>
+                            <span class="btn-text">Add to Service</span>
+                        </button>
+                    </div>
                 </div>
+
+                <!-- Service Card 3: Battery Terminal Care -->
+                <div class="service-card bg-white rounded-2xl p-6 shadow-2xl">
+                    <div class="text-center mb-6">
+                        <div class="bg-red-600 text-white px-4 py-2 rounded-lg inline-block text-sm font-bold mb-4">
+                            BATTERY TERMINAL CARE
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Battery Terminal Care</h3>
+                        <p class="text-gray-600 text-sm">Anti-corrosion battery terminal protection</p>
+                    </div>
+
+                    <div class="flex justify-center items-center gap-4 mb-6">
+                        <div class="text-center">
+                            <div
+                                class="w-20 h-20 bg-gray-100 rounded-lg mb-2 flex items-center justify-center border-2 border-red-200">
+                                <i class="fas fa-battery-quarter text-2xl text-red-400"></i>
+                            </div>
+                            <span class="text-xs font-semibold text-red-600">BEFORE</span>
+                        </div>
+
+                        <div class="flex-1 flex items-center justify-center">
+                            <div
+                                class="w-16 h-16 product-circle rounded-full flex items-center justify-center shadow-lg">
+                                <i class="fas fa-bottle-droplet text-white text-xl"></i>
+                            </div>
+                        </div>
+
+                        <div class="text-center">
+                            <div
+                                class="w-20 h-20 bg-gray-100 rounded-lg mb-2 flex items-center justify-center border-2 border-green-200">
+                                <i class="fas fa-battery-full text-2xl text-green-500"></i>
+                            </div>
+                            <span class="text-xs font-semibold text-green-600">AFTER</span>
+                        </div>
+                    </div>
+
+                    <ul class="text-sm text-gray-700 space-y-2 mb-6">
+                        <li class="flex items-center">
+                            <div class="w-2 h-2 bg-green-500 rounded-full mr-3 flex-shrink-0"></div>
+                            Corrosion resistance coating
+                        </li>
+                        <li class="flex items-center">
+                            <div class="w-2 h-2 bg-green-500 rounded-full mr-3 flex-shrink-0"></div>
+                            Improves contact efficiency
+                        </li>
+                        <li class="flex items-center">
+                            <div class="w-2 h-2 bg-green-500 rounded-full mr-3 flex-shrink-0"></div>
+                            Long-lasting protection
+                        </li>
+                    </ul>
+
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-red-600 mb-4">₹171</div>
+                        <button
+                            class="service-btn whatsapp-btn text-white px-6 py-2 rounded-lg font-semibold w-full flex items-center justify-center gap-2"
+                            data-service="Battery Terminal Care" data-price="₹171"
+                            data-features="Corrosion resistance coating, Improves contact efficiency, Long-lasting protection">
+                            <i class="fab fa-whatsapp text-lg"></i>
+                            <span class="btn-text">Add to Service</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service Card 4: Engine Flush System -->
+                <div class="service-card bg-white rounded-2xl p-6 shadow-2xl">
+                    <div class="text-center mb-6">
+                        <div class="bg-red-600 text-white px-4 py-2 rounded-lg inline-block text-sm font-bold mb-4">
+                            ENGINE FLUSH SYSTEM
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Engine Flush System</h3>
+                        <p class="text-gray-600 text-sm">Complete engine cleaning and optimization</p>
+                    </div>
+
+                    <div class="flex justify-center items-center gap-4 mb-6">
+                        <div class="text-center">
+                            <div
+                                class="w-20 h-20 bg-gray-100 rounded-lg mb-2 flex items-center justify-center border-2 border-red-200">
+                                <i class="fas fa-engine text-2xl text-red-400"></i>
+                            </div>
+                            <span class="text-xs font-semibold text-red-600">BEFORE</span>
+                        </div>
+
+                        <div class="flex-1 flex items-center justify-center">
+                            <div
+                                class="w-16 h-16 product-circle rounded-full flex items-center justify-center shadow-lg">
+                                <i class="fas fa-oil-can text-white text-xl"></i>
+                            </div>
+                        </div>
+
+                        <div class="text-center">
+                            <div
+                                class="w-20 h-20 bg-gray-100 rounded-lg mb-2 flex items-center justify-center border-2 border-green-200">
+                                <i class="fas fa-tachometer-alt text-2xl text-green-500"></i>
+                            </div>
+                            <span class="text-xs font-semibold text-green-600">AFTER</span>
+                        </div>
+                    </div>
+
+                    <ul class="text-sm text-gray-700 space-y-2 mb-6">
+                        <li class="flex items-center">
+                            <div class="w-2 h-2 bg-green-500 rounded-full mr-3 flex-shrink-0"></div>
+                            Removes sludge and contaminants
+                        </li>
+                        <li class="flex items-center">
+                            <div class="w-2 h-2 bg-green-500 rounded-full mr-3 flex-shrink-0"></div>
+                            Restores compression efficiency
+                        </li>
+                        <li class="flex items-center">
+                            <div class="w-2 h-2 bg-green-500 rounded-full mr-3 flex-shrink-0"></div>
+                            Improves engine performance
+                        </li>
+                    </ul>
+
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-red-600 mb-4">₹171</div>
+                        <button
+                            class="service-btn whatsapp-btn text-white px-6 py-2 rounded-lg font-semibold w-full flex items-center justify-center gap-2"
+                            data-service="Engine Flush System" data-price="₹171"
+                            data-features="Removes sludge and contaminants, Restores compression efficiency, Improves engine performance">
+                            <i class="fab fa-whatsapp text-lg"></i>
+                            <span class="btn-text">Add to Service</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service Card 5: Helmet Deep Clean -->
+                <div class="service-card bg-white rounded-2xl p-6 shadow-2xl">
+                    <div class="text-center mb-6">
+                        <div class="bg-red-600 text-white px-4 py-2 rounded-lg inline-block text-sm font-bold mb-4">
+                            HELMET DEEP CLEAN
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Helmet Deep Clean</h3>
+                        <p class="text-gray-600 text-sm">Professional helmet cleaning service</p>
+                    </div>
+
+                    <div class="flex justify-center items-center gap-4 mb-6">
+                        <div class="text-center">
+                            <div
+                                class="w-20 h-20 bg-gray-100 rounded-lg mb-2 flex items-center justify-center border-2 border-red-200">
+                                <i class="fas fa-hard-hat text-2xl text-red-400"></i>
+                            </div>
+                            <span class="text-xs font-semibold text-red-600">BEFORE</span>
+                        </div>
+
+                        <div class="flex-1 flex items-center justify-center">
+                            <div
+                                class="w-16 h-16 product-circle rounded-full flex items-center justify-center shadow-lg">
+                                <i class="fas fa-soap text-white text-xl"></i>
+                            </div>
+                        </div>
+
+                        <div class="text-center">
+                            <div
+                                class="w-20 h-20 bg-gray-100 rounded-lg mb-2 flex items-center justify-center border-2 border-green-200">
+                                <i class="fas fa-sparkles text-2xl text-green-500"></i>
+                            </div>
+                            <span class="text-xs font-semibold text-green-600">AFTER</span>
+                        </div>
+                    </div>
+
+                    <ul class="text-sm text-gray-700 space-y-2 mb-6">
+                        <li class="flex items-center">
+                            <div class="w-2 h-2 bg-green-500 rounded-full mr-3 flex-shrink-0"></div>
+                            Foam-based cleaning technology
+                        </li>
+                        <li class="flex items-center">
+                            <div class="w-2 h-2 bg-green-500 rounded-full mr-3 flex-shrink-0"></div>
+                            Removes odors and bacteria
+                        </li>
+                        <li class="flex items-center">
+                            <div class="w-2 h-2 bg-green-500 rounded-full mr-3 flex-shrink-0"></div>
+                            Maintains helmet integrity
+                        </li>
+                    </ul>
+
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-red-600 mb-4">₹171</div>
+                        <button
+                            class="service-btn whatsapp-btn text-white px-6 py-2 rounded-lg font-semibold w-full flex items-center justify-center gap-2"
+                            data-service="Helmet Deep Clean" data-price="₹171"
+                            data-features="Foam-based cleaning technology, Removes odors and bacteria, Maintains helmet integrity">
+                            <i class="fab fa-whatsapp text-lg"></i>
+                            <span class="btn-text">Add to Service</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service Card 6: Chain Maintenance Kit -->
+                <div class="service-card bg-white rounded-2xl p-6 shadow-2xl">
+                    <div class="text-center mb-6">
+                        <div class="bg-red-600 text-white px-4 py-2 rounded-lg inline-block text-sm font-bold mb-4">
+                            CHAIN MAINTENANCE KIT
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Chain Maintenance Kit</h3>
+                        <p class="text-gray-600 text-sm">Complete chain cleaning and lubrication</p>
+                    </div>
+
+                    <div class="flex justify-center items-center gap-4 mb-6">
+                        <div class="text-center">
+                            <div
+                                class="w-20 h-20 bg-gray-100 rounded-lg mb-2 flex items-center justify-center border-2 border-red-200">
+                                <i class="fas fa-link text-2xl text-red-400"></i>
+                            </div>
+                            <span class="text-xs font-semibold text-red-600">BEFORE</span>
+                        </div>
+
+                        <div class="flex-1 flex items-center justify-center">
+                            <div
+                                class="w-16 h-16 product-circle rounded-full flex items-center justify-center shadow-lg">
+                                <i class="fas fa-tools text-white text-xl"></i>
+                            </div>
+                        </div>
+
+                        <div class="text-center">
+                            <div
+                                class="w-20 h-20 bg-gray-100 rounded-lg mb-2 flex items-center justify-center border-2 border-green-200">
+                                <i class="fas fa-cog text-2xl text-green-500"></i>
+                            </div>
+                            <span class="text-xs font-semibold text-green-600">AFTER</span>
+                        </div>
+                    </div>
+
+                    <ul class="text-sm text-gray-700 space-y-2 mb-6">
+                        <li class="flex items-center">
+                            <div class="w-2 h-2 bg-green-500 rounded-full mr-3 flex-shrink-0"></div>
+                            Professional grade lubricants
+                        </li>
+                        <li class="flex items-center">
+                            <div class="w-2 h-2 bg-green-500 rounded-full mr-3 flex-shrink-0"></div>
+                            Extends chain life
+                        </li>
+                        <li class="flex items-center">
+                            <div class="w-2 h-2 bg-green-500 rounded-full mr-3 flex-shrink-0"></div>
+                            Smooth operation guarantee
+                        </li>
+                    </ul>
+
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-red-600 mb-4">₹171</div>
+                        <button
+                            class="service-btn whatsapp-btn text-white px-6 py-2 rounded-lg font-semibold w-full flex items-center justify-center gap-2"
+                            data-service="Chain Maintenance Kit" data-price="₹171"
+                            data-features="Professional grade lubricants, Extends chain life, Smooth operation guarantee">
+                            <i class="fab fa-whatsapp text-lg"></i>
+                            <span class="btn-text">Add to Service</span>
+                        </button>
+                    </div>
+                </div>
+
             </div>
 
+            <!-- Bottom CTA -->
             <div class="text-center mt-12">
-                <a href="servicesbooking.html"
-                    class="bg-white text-tvs-blue px-12 py-5 rounded-2xl font-bold text-xl hover:bg-gray-100 transition-all transform hover:scale-105 shadow-2xl">
-                    Book VAS Package
-                </a>
+                <div class="bg-white rounded-2xl p-8 max-w-4xl mx-auto shadow-2xl">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Complete Service Package</h3>
+                    <p class="text-gray-600 mb-6">Get all premium service consumables at an unbeatable price</p>
+                    <div class="flex flex-col md:flex-row items-center justify-center gap-6">
+                        <div class="text-center">
+                            <div class="text-4xl font-bold text-red-600">₹171</div>
+                            <div class="text-sm text-gray-500">Per Service Item</div>
+                        </div>
+                        <button
+                            class="cta-button text-white px-12 py-4 rounded-2xl font-bold text-xl flex items-center gap-3"
+                            id="bookCompletePackage">
+                            <i class="fab fa-whatsapp text-2xl"></i>
+                            Book Complete VAS Package
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Brand Footer -->
+            <div class="text-center mt-8">
+                <div class="flex flex-col md:flex-row justify-center items-center gap-8 text-white">
+                    <div class="text-sm opacity-75">Visit: shop.tvsmotor.com</div>
+                    <div class="text-sm opacity-75">www.futureaccessories.com</div>
+                </div>
             </div>
         </div>
     </section>
@@ -859,7 +1250,7 @@
                             <i class="fas fa-user text-white text-xl"></i>
                         </div>
                         <div class="ml-4">
-                            <h4 class="font-bold text-gray-800 text-lg">Priya Sharma</h4>
+                            <h4 class="font-bold text-gray-800 text-lg">Prajwalika Pal</h4>
                             <div class="flex text-yellow-400 text-lg">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
@@ -879,7 +1270,7 @@
                             <i class="fas fa-user text-white text-xl"></i>
                         </div>
                         <div class="ml-4">
-                            <h4 class="font-bold text-gray-800 text-lg">Amit Patel</h4>
+                            <h4 class="font-bold text-gray-800 text-lg">Rahul Sahu</h4>
                             <div class="flex text-yellow-400 text-lg">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
@@ -1129,50 +1520,53 @@
     <!-- Parts Inquiry Modal -->
     <div id="partsModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden">
         <div class="flex items-center justify-center min-h-screen p-4">
-            <div class="bg-white rounded-2xl p-8 max-w-md w-full">
-                <h3 class="text-2xl font-bold text-tvs-blue mb-6">Request Parts via Email</h3>
-                <form id="partsForm">
-                    <div class="space-y-4">
+            <div class="bg-white rounded-2xl p-6 max-w-sm w-full">
+                <h3 class="text-xl font-bold text-tvs-blue mb-4">Request Parts via Email</h3>
+                <form action="booking.php" method="post" id="partsForm">
+                    <div class="space-y-3">
                         <div>
-                            <label class="block text-sm font-bold text-gray-700 mb-2">Your Name *</label>
+                            <label class="block text-sm font-bold text-gray-700 mb-1">Your Name <span
+                                    class="text-red-500">*</span></label>
                             <input type="text" id="partCustomerName" required
-                                class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-tvs-blue focus:border-transparent">
+                                class="w-full px-3 py-2 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-tvs-blue focus:border-transparent">
                         </div>
                         <div>
-                            <label class="block text-sm font-bold text-gray-700 mb-2">Email *</label>
-                            <input type="email" id="partCustomerEmail" required
-                                class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-tvs-blue focus:border-transparent">
+                            <label class="block text-sm font-bold text-gray-700 mb-1">Email</label>
+                            <input type="email" id="partCustomerEmail"
+                                class="w-full px-3 py-2 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-tvs-blue focus:border-transparent">
                         </div>
                         <div>
-                            <label class="block text-sm font-bold text-gray-700 mb-2">Phone Number *</label>
+                            <label class="block text-sm font-bold text-gray-700 mb-1">Phone Number <span
+                                    class="text-red-500">*</span></label>
                             <input type="tel" id="partCustomerPhone" required
-                                class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-tvs-blue focus:border-transparent">
+                                class="w-full px-3 py-2 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-tvs-blue focus:border-transparent">
                         </div>
                         <div>
-                            <label class="block text-sm font-bold text-gray-700 mb-2">Vehicle Model</label>
+                            <label class="block text-sm font-bold text-gray-700 mb-1">Vehicle Model</label>
                             <input type="text" id="partVehicleModel"
-                                class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-tvs-blue focus:border-transparent">
+                                class="w-full px-3 py-2 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-tvs-blue focus:border-transparent">
                         </div>
                         <div>
-                            <label class="block text-sm font-bold text-gray-700 mb-2">Required Parts *</label>
-                            <textarea id="partRequiredParts" required rows="3"
-                                class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-tvs-blue focus:border-transparent"
+                            <label class="block text-sm font-bold text-gray-700 mb-1">Required Parts <span
+                                    class="text-red-500">*</span></label>
+                            <textarea id="partRequiredParts" required rows="2"
+                                class="w-full px-3 py-2 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-tvs-blue focus:border-transparent"
                                 placeholder="List the parts you need..."></textarea>
                         </div>
                         <div>
-                            <label class="block text-sm font-bold text-gray-700 mb-2">Additional Message</label>
-                            <textarea id="partMessage" rows="3"
-                                class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-tvs-blue focus:border-transparent"
+                            <label class="block text-sm font-bold text-gray-700 mb-1">Additional Message</label>
+                            <textarea id="partMessage" rows="2"
+                                class="w-full px-3 py-2 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-tvs-blue focus:border-transparent"
                                 placeholder="Any additional requirements..."></textarea>
                         </div>
                     </div>
-                    <div class="flex space-x-4 mt-6">
+                    <div class="flex space-x-3 mt-5">
                         <button type="submit"
-                            class="flex-1 bg-tvs-blue text-white py-3 rounded-lg font-bold hover:bg-blue-800 transition">
+                            class="flex-1 bg-tvs-blue text-white py-2 rounded-lg font-bold hover:bg-blue-800 transition">
                             Send Email
                         </button>
                         <button type="button" onclick="closePartsModal()"
-                            class="flex-1 bg-gray-300 text-gray-700 py-3 rounded-lg font-bold hover:bg-gray-400 transition">
+                            class="flex-1 bg-gray-300 text-gray-700 py-2 rounded-lg font-bold hover:bg-gray-400 transition">
                             Cancel
                         </button>
                     </div>
@@ -1180,6 +1574,7 @@
             </div>
         </div>
     </div>
+
 
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -1259,7 +1654,7 @@
 
         // Parts form submission
         document.getElementById('partsForm').addEventListener('submit', function (e) {
-            e.preventDefault();
+
 
             const formData = new FormData(this);
             const name = document.getElementById('partCustomerName').value;
@@ -1291,7 +1686,7 @@ ${name}
             window.location.href = `mailto:tvsarya@gmail.com?subject=${emailSubject}&body=${emailBody}`;
 
             closePartsModal();
-            alert('Email client opened! Please send the email to complete your parts inquiry.');
+
         });
 
 
@@ -1392,6 +1787,128 @@ Please let me know when the service slot is available.`);
             if (e.target === this) {
                 closePartsModal();
             }
+        });
+        // WhatsApp number
+        const whatsappNumber = '919348148310';
+
+        // Show notification
+        function showNotification(message) {
+            const notification = document.getElementById('notification');
+            const notificationText = document.getElementById('notificationText');
+
+            notificationText.textContent = message;
+            notification.classList.add('show');
+
+            setTimeout(() => {
+                notification.classList.remove('show');
+            }, 3000);
+        }
+
+        // Send WhatsApp message for individual service
+        function sendServiceWhatsApp(serviceName, price, features) {
+            const currentTime = new Date().toLocaleString('en-IN', {
+                timeZone: 'Asia/Kolkata',
+                day: '2-digit',
+                month: '2-digit',
+                year: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit'
+            });
+
+            const message = `🚗 *TVS Service Request* 🚗
+
+📅 *Date & Time:* ${currentTime}
+
+🔧 *Service Selected:* ${serviceName}
+💰 *Price:* ${price}
+
+✅ *Features:*
+${features.split(', ').map(feature => `• ${feature}`).join('\n')}
+
+📞 *Customer wants to book this service*
+
+Please contact for booking confirmation.
+
+#TVSService #VAS #ServiceConsumables`;
+
+            const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+            window.open(whatsappURL, '_blank');
+        }
+
+        // Handle individual service button clicks
+        document.querySelectorAll('.service-btn').forEach(button => {
+            button.addEventListener('click', function () {
+                const serviceName = this.getAttribute('data-service');
+                const price = this.getAttribute('data-price');
+                const features = this.getAttribute('data-features');
+                const btnText = this.querySelector('.btn-text');
+
+                // Visual feedback
+                const originalHTML = this.innerHTML;
+                this.innerHTML = '<i class="fas fa-paper-plane text-lg"></i> Sending...';
+                this.classList.add('sending');
+
+                // Send WhatsApp message
+                sendServiceWhatsApp(serviceName, price, features);
+
+                // Show notification
+                showNotification(`${serviceName} request sent to WhatsApp!`);
+
+                // Reset button after 2 seconds
+                setTimeout(() => {
+                    this.innerHTML = originalHTML;
+                    this.classList.remove('sending');
+                }, 2000);
+            });
+        });
+
+        // Complete package booking
+        document.getElementById('bookCompletePackage').addEventListener('click', function () {
+            const currentTime = new Date().toLocaleString('en-IN', {
+                timeZone: 'Asia/Kolkata',
+                day: '2-digit',
+                month: '2-digit',
+                year: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit'
+            });
+
+            const completePackageMessage = `🚗 *TVS Complete VAS Package* 🚗
+
+📅 *Date & Time:* ${currentTime}
+
+🎯 *Package:* Complete Service Consumables Package
+💰 *Special Offer:* ₹171 per service
+
+📦 *Includes All Services:*
+• 4-Way Rust Protection
+• Brake Cleaner Pro
+• Battery Terminal Care
+• Engine Flush System
+• Helmet Deep Clean
+• Chain Maintenance Kit
+
+✨ *Customer wants to book the COMPLETE VAS PACKAGE*
+
+Please contact for booking confirmation and scheduling.
+
+#TVSService #CompletePackage #VAS #ServiceConsumables`;
+
+            const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(completePackageMessage)}`;
+
+            // Visual feedback
+            const originalHTML = this.innerHTML;
+            this.innerHTML = '<i class="fas fa-paper-plane text-2xl"></i> Sending...';
+            this.style.background = '#f59e0b';
+
+            window.open(whatsappURL, '_blank');
+            showNotification('Complete package request sent to WhatsApp!');
+
+            // Reset button
+            setTimeout(() => {
+                this.innerHTML = originalHTML;
+                this.style.background = 'linear-gradient(135deg, #1e40af, #dc2626)';
+            }, 3000);
         });
     </script>
 </body>
