@@ -310,6 +310,54 @@
         .notification.show {
             transform: translateX(0);
         }
+
+        /* Special Offer Animation */
+        .offer-pulse {
+            animation: offerPulse 2s infinite;
+        }
+
+        @keyframes offerPulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(237, 53, 0, 0.7);
+            }
+
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 0 0 20px rgba(237, 53, 0, 0);
+            }
+        }
+
+        .combo-card {
+            background: linear-gradient(135deg, #fff 0%, #f8fafc 100%);
+            border: 3px solid #ED3500;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .combo-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(237, 53, 0, 0.1), transparent);
+            transform: rotate(45deg);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% {
+                transform: translateX(-100%) translateY(-100%) rotate(45deg);
+            }
+
+            100% {
+                transform: translateX(100%) translateY(100%) rotate(45deg);
+            }
+        }
     </style>
 
     <script>
@@ -796,7 +844,7 @@
         </div>
     </section>
 
-    <!-- VAS Section -->
+    <!-- Special Offer Section - 4 Way Rust Free Battery Terminal & Brake Cleaner Combo -->
     <section class="py-16 bg-gradient-to-r from-red-600 via-orange-500 to-red-600">
         <div class="container mx-auto px-4">
             <!-- Header with Special Offer -->
@@ -1085,6 +1133,7 @@
         </div>
     </section>
 
+    <!-- Updated Complaint Section -->
     <section class="py-16 bg-gradient-to-br from-red-50 to-tvs-pink">
         <div class="container mx-auto px-4">
             <div class="text-center mb-12">
@@ -1164,7 +1213,7 @@
         </div>
     </section>
 
-    <!-- Appointment Booking Section -->
+    <!-- Updated Appointment Booking Section -->
     <section class="py-16 bg-gradient-to-br from-tvs-blue to-blue-600">
         <div class="container mx-auto px-4">
             <div class="text-center mb-12">
@@ -1175,44 +1224,49 @@
             <div class="max-w-2xl mx-auto">
                 <div class="bg-white rounded-2xl shadow-2xl p-10">
                     <form id="appointmentForm" class="space-y-6">
-                        <div>
-                            <label for="customerName" class="block text-sm font-bold text-gray-700 mb-3">
-                                Full Name <span class="text-red-600">*</span>
-                            </label>
-                            <input type="text" id="customerName" name="customerName" required
-                                class="w-full px-6 py-4 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-tvs-blue focus:border-transparent text-lg"
-                                placeholder="Enter your full name">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <!-- Customer Name -->
+                            <div>
+                                <label for="customerName" class="block text-sm font-bold text-gray-700 mb-3">
+                                    Full Name *
+                                </label>
+                                <input type="text" id="customerName" name="customerName" required
+                                    class="w-full px-6 py-4 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-tvs-blue focus:border-transparent text-lg"
+                                    placeholder="Enter your full name">
+                            </div>
+
+                            <!-- Phone Number -->
+                            <div>
+                                <label for="phoneNumber" class="block text-sm font-bold text-gray-700 mb-3">
+                                    Phone Number *
+                                </label>
+                                <input type="tel" id="phoneNumber" name="phoneNumber" required
+                                    class="w-full px-6 py-4 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-tvs-blue focus:border-transparent text-lg"
+                                    placeholder="Enter your phone number">
+                            </div>
                         </div>
 
-                        <div>
-                            <label for="phoneNumber" class="block text-sm font-bold text-gray-700 mb-3">
-                                Phone Number <span class="text-red-600">*</span>
-                            </label>
-                            <input type="tel" id="phoneNumber" name="phoneNumber" required
-                                class="w-full px-6 py-4 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-tvs-blue focus:border-transparent text-lg"
-                                placeholder="Enter your phone number">
-                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <!-- Booking Number -->
+                            <div>
+                                <label for="bookingNumber" class="block text-sm font-bold text-gray-700 mb-3">
+                                    Booking Number
+                                </label>
+                                <input type="text" id="bookingNumber" name="bookingNumber"
+                                    class="w-full px-6 py-4 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-tvs-blue focus:border-transparent text-lg"
+                                    placeholder="Enter booking number (if any)">
+                            </div>
 
-                        <!-- ✅ New: Vehicle Registration Number -->
-                        <div>
-                            <label for="regNumber" class="block text-sm font-bold text-gray-700 mb-3">
-                                Vehicle Registration Number <span class="text-red-600">*</span>
-                            </label>
-                            <input type="text" id="regNumber" name="regNumber" required
-                                class="w-full px-6 py-4 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-tvs-blue focus:border-transparent text-lg"
-                                placeholder="e.g., OD07AB1234">
+                            <!-- Frame Number (Optional) -->
+                            <div>
+                                <label for="frameNumber" class="block text-sm font-bold text-gray-700 mb-3">
+                                    Frame Number <span class="text-gray-500 font-normal">(Optional)</span>
+                                </label>
+                                <input type="text" id="frameNumber" name="frameNumber"
+                                    class="w-full px-6 py-4 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-tvs-blue focus:border-transparent text-lg"
+                                    placeholder="Enter frame number (optional)">
+                            </div>
                         </div>
-
-                        <!-- ✅ New: Frame Number -->
-                        <div>
-                            <label for="frameNumber" class="block text-sm font-bold text-gray-700 mb-3">
-                                Frame Number
-                            </label>
-                            <input type="text" id="frameNumber" name="frameNumber"
-                                class="w-full px-6 py-4 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-tvs-blue focus:border-transparent text-lg"
-                                placeholder="Enter vehicle's frame number">
-                        </div>
-
 
                         <div>
                             <label for="vehicleModel" class="block text-sm font-bold text-gray-700 mb-3">
@@ -1243,7 +1297,6 @@
                                 <option value="RSA">Road Side Assistance</option>
                                 <option value="ATW">Anytime Warranty</option>
                                 <option value="Parts Replacement">Parts Replacement</option>
-                                <option value="Parts Replacement">Other</option>
                             </select>
                         </div>
 
@@ -1362,126 +1415,141 @@
         <div class="flex items-center justify-center min-h-screen p-4">
             <div class="bg-white rounded-2xl p-6 max-w-sm w-full">
                 <h3 class="text-xl font-bold text-tvs-blue mb-4">Request Parts via Email</h3>
-                <form id="partsForm" action="parts.php" method="post" class="space-y-4">
-                    <!-- Full Name -->
-                    <div>
-                        <label for="fullName" class="block text-sm font-semibold text-gray-700 mb-2">
-                            Full Name *
-                        </label>
-                        <input type="text" id="fullName" name="fullName" required
-                            class="w-full px-4 py-2 border border-gray-300 rounded-lg text-base"
-                            placeholder="Enter your full name">
+                <form action="booking.php" method="post" id="partsForm">
+                    <div class="space-y-3">
+                        <div>
+                            <label class="block text-sm font-bold text-gray-700 mb-1">Your Name <span
+                                    class="text-red-500">*</span></label>
+                            <input type="text" id="partCustomerName" required
+                                class="w-full px-3 py-2 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-tvs-blue focus:border-transparent">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold text-gray-700 mb-1">Email</label>
+                            <input type="email" id="partCustomerEmail"
+                                class="w-full px-3 py-2 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-tvs-blue focus:border-transparent">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold text-gray-700 mb-1">Phone Number <span
+                                    class="text-red-500">*</span></label>
+                            <input type="tel" id="partCustomerPhone" required
+                                class="w-full px-3 py-2 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-tvs-blue focus:border-transparent">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold text-gray-700 mb-1">Vehicle Model</label>
+                            <input type="text" id="partVehicleModel"
+                                class="w-full px-3 py-2 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-tvs-blue focus:border-transparent">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold text-gray-700 mb-1">Required Parts <span
+                                    class="text-red-500">*</span></label>
+                            <textarea id="partRequiredParts" required rows="2"
+                                class="w-full px-3 py-2 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-tvs-blue focus:border-transparent"
+                                placeholder="List the parts you need..."></textarea>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold text-gray-700 mb-1">Additional Message</label>
+                            <textarea id="partMessage" rows="2"
+                                class="w-full px-3 py-2 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-tvs-blue focus:border-transparent"
+                                placeholder="Any additional requirements..."></textarea>
+                        </div>
                     </div>
-
-                    <!-- Mobile Number -->
-                    <div>
-                        <label for="mobile" class="block text-sm font-semibold text-gray-700 mb-2">
-                            Mobile Number *
-                        </label>
-                        <input type="tel" id="mobile" name="mobile" required
-                            class="w-full px-4 py-2 border border-gray-300 rounded-lg text-base"
-                            placeholder="Enter your mobile number">
+                    <div class="flex space-x-3 mt-5">
+                        <button type="submit"
+                            class="flex-1 bg-tvs-blue text-white py-2 rounded-lg font-bold hover:bg-blue-800 transition">
+                            Send Email
+                        </button>
+                        <button type="button" onclick="closePartsModal()"
+                            class="flex-1 bg-gray-300 text-gray-700 py-2 rounded-lg font-bold hover:bg-gray-400 transition">
+                            Cancel
+                        </button>
                     </div>
-
-                    <!-- Service Type -->
-                    <div>
-                        <label for="service" class="block text-sm font-semibold text-gray-700 mb-2">
-                            Service Type
-                        </label>
-                        <select id="service" name="service"
-                            class="w-full px-4 py-2 border border-gray-300 rounded-lg text-base">
-                            <option value="">Select service type</option>
-                            <option value="Parts Inquiry">Parts Inquiry</option>
-                            <option value="Replacement Request">Replacement Request</option>
-                            <option value="Other">Other</option>
-                        </select>
-                    </div>
-
-                    <!-- Other Service (Optional) -->
-                    <div>
-                        <label for="otherService" class="block text-sm font-semibold text-gray-700 mb-2">
-                            If Other, please specify
-                        </label>
-                        <input type="text" id="otherService" name="otherService"
-                            class="w-full px-4 py-2 border border-gray-300 rounded-lg text-base"
-                            placeholder="Mention any other service...">
-                    </div>
-
-
-                    <!-- Additional Notes -->
-                    <div>
-                        <label for="notes" class="block text-sm font-semibold text-gray-700 mb-2">
-                            Required Parts or Notes
-                        </label>
-                        <textarea id="notes" name="notes" rows="3"
-                            class="w-full px-4 py-2 border border-gray-300 rounded-lg text-base"
-                            placeholder="List the parts you need or other details..."></textarea>
-                    </div>
-
-                    <!-- Submit Button -->
-                    <button type="submit"
-                        class="w-full bg-tvs-red hover:bg-red-600 text-white px-6 py-3 rounded-lg font-bold text-lg transition-all transform hover:scale-105 shadow">
-                        <i class="fas fa-cogs mr-2"></i>
-                        Submit Parts Inquiry
-                    </button>
                 </form>
-
-
             </div>
         </div>
     </div>
 
+    <!-- Notification -->
+    <div id="notification" class="notification">
+        <span id="notificationText"></span>
+    </div>
 
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <!-- JavaScript -->
     <script>
-        // Initialize Swiper
-        var swiper = new Swiper(".partsSwiper", {
-            effect: "coverflow",
-            grabCursor: true,
-            centeredSlides: true,
-            slidesPerView: "auto",
-            coverflowEffect: {
-                rotate: 50,
-                stretch: 0,
-                depth: 100,
-                modifier: 1,
-                slideShadows: true,
-            },
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            },
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-            autoplay: {
-                delay: 3000,
-                disableOnInteraction: false,
-            },
-            loop: true,
-        });
+        // Import Tailwind CSS and Swiper
+        import tailwind from 'tailwindcss';
+        import Swiper from 'swiper';
 
-        // Tab functionality for services
-        document.querySelectorAll('.tab-button').forEach(button => {
-            button.addEventListener('click', function () {
-                const tabId = this.getAttribute('data-tab');
+        // Tailwind Config
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'tvs-red': '#ED3500',
+                        'tvs-blue': '#093FB4',
+                        'tvs-pink': '#FFD8D8',
+                        'tvs-cream': '#FFFCFB',
+                    },
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                    }
+                }
+            }
+        }
 
-                // Remove active class from all buttons and contents
-                document.querySelectorAll('.tab-button').forEach(btn => {
-                    btn.classList.remove('active', 'border-tvs-blue', 'text-tvs-blue');
-                    btn.classList.add('border-transparent', 'text-gray-700');
-                });
-                document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
-
-                // Add active class to clicked button and corresponding content
-                this.classList.add('active', 'border-tvs-blue', 'text-tvs-blue');
-                this.classList.remove('border-transparent', 'text-gray-700');
-                document.getElementById(tabId).classList.add('active');
+        // Initialize Swiper when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function () {
+            // Initialize Swiper
+            var swiper = new Swiper(".partsSwiper", {
+                effect: "coverflow",
+                grabCursor: true,
+                centeredSlides: true,
+                slidesPerView: "auto",
+                coverflowEffect: {
+                    rotate: 50,
+                    stretch: 0,
+                    depth: 100,
+                    modifier: 1,
+                    slideShadows: true,
+                },
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+                autoplay: {
+                    delay: 3000,
+                    disableOnInteraction: false,
+                },
+                loop: true,
             });
+
+            // Tab functionality for services
+            document.querySelectorAll('.tab-button').forEach(button => {
+                button.addEventListener('click', function () {
+                    const tabId = this.getAttribute('data-tab');
+
+                    // Remove active class from all buttons and contents
+                    document.querySelectorAll('.tab-button').forEach(btn => {
+                        btn.classList.remove('active', 'border-tvs-blue', 'text-tvs-blue');
+                        btn.classList.add('border-transparent', 'text-gray-700');
+                    });
+                    document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+
+                    // Add active class to clicked button and corresponding content
+                    this.classList.add('active', 'border-tvs-blue', 'text-tvs-blue');
+                    this.classList.remove('border-transparent', 'text-gray-700');
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+
+            // Initialize form event listeners
+            initializeFormListeners();
         });
 
         // Parts inquiry functions
@@ -1502,55 +1570,11 @@
         function selectPart(partName) {
             if (!selectedParts.includes(partName)) {
                 selectedParts.push(partName);
-                alert(`${partName} added to your inquiry list!`);
+                showNotification(`${partName} added to your inquiry list!`);
             } else {
-                alert(`${partName} is already in your inquiry list!`);
+                showNotification(`${partName} is already in your inquiry list!`);
             }
         }
-
-        // Parts form submission
-        document.getElementById('partsForm').addEventListener('submit', function (e) {
-
-
-            const formData = new FormData(this);
-            const name = document.getElementById('partCustomerName').value;
-            const email = document.getElementById('partCustomerEmail').value;
-            const phone = document.getElementById('partCustomerPhone').value;
-            const vehicle = document.getElementById('partVehicleModel').value;
-            const parts = document.getElementById('partRequiredParts').value;
-            const message = document.getElementById('partMessage').value;
-
-            // Create email content
-            const emailSubject = encodeURIComponent('TVS Parts Inquiry - ' + name);
-            const emailBody = encodeURIComponent(`
-Parts Inquiry Details:
-
-Name: ${name}
-Email: ${email}
-Phone: ${phone}
-Vehicle Model: ${vehicle || 'Not specified'}
-Required Parts: ${parts}
-Additional Message: ${message || 'None'}
-
-Please provide availability and pricing for the requested parts.
-
-Best regards,
-${name}
-            `);
-
-            // Open email client
-            window.location.href = `mailto:tvsarya@gmail.com?subject=${emailSubject}&body=${emailBody}`;
-
-            closePartsModal();
-
-        });
-
-
-
-
-
-
-
 
         // WhatsApp Review Function
         function openWhatsAppReview() {
@@ -1560,228 +1584,138 @@ Please let me know how you found our service and what we can improve.`);
             window.open(`https://wa.me/+919348148310?text=${message}`, '_blank');
         }
 
-        // WhatsApp Complaint Function
-        document.getElementById('complaintForm').addEventListener('submit', function (e) {
-            e.preventDefault();
+        // Special Combo Offer WhatsApp Function
+        function bookComboOffer() {
+            const message = encodeURIComponent(`🔥 SPECIAL COMBO OFFER BOOKING 🔥
 
-            const formData = new FormData(this);
-            const regNumber = formData.get('vehicleRegNumber');
-            const mobile = formData.get('complaintMobile');
-            const lastService = formData.get('lastServiceDate');
-            const details = formData.get('complaintDetails');
+I want to book the 4-Way Rust Free Battery Terminal + Brake Cleaner Combo @ ₹171/-
 
-            const message = encodeURIComponent(`🚨 *Vehicle Service Complaint* 🚨
+Please confirm my booking and let me know the next steps.
 
-*Vehicle Reg. No:* ${regNumber}
-*Mobile Number:* ${mobile}
-*Last Service Date:* ${lastService}
-*Complaint:* ${details}
+Thank you!`);
 
-Please assist in resolving this issue as soon as possible. Thank you.`);
-
+            // ✅ Remove "+" from number
             window.open(`https://wa.me/919348148310?text=${message}`, '_blank');
-        });
-        // Appointment Form Submission
-        document.getElementById('appointmentForm').addEventListener('submit', function (e) {
-            e.preventDefault();
+        }
 
-            const formData = new FormData(this);
-            const name = formData.get('customerName');
-            const phone = formData.get('phoneNumber');
-            const vehicle = formData.get('vehicleModel');
-            const service = formData.get('serviceType');
-            const date = formData.get('preferredDate');
-            const regNumber = formData.get('regNumber');
-            const frameNumber = formData.get('frameNumber');
-            const message = formData.get('message');
-
-            const whatsappMessage = encodeURIComponent(`🛠️ *Service Appointment Request* 🛠️
-
-*Name:* ${name}
-*Phone:* ${phone}
-*Vehicle Model:* ${vehicle || 'Not specified'}
-*Service Type:* ${service || 'Not specified'}
-*Preferred Date:* ${date || 'Not specified'}
-*Registration Number:* ${regNumber || 'Not provided'}
-*Frame Number:* ${frameNumber || 'Not provided'}
-*Message:* ${message || 'None'}
-
-Please let me know when the service slot is available.`);
-
-            window.open(`https://wa.me/919348148310?text=${whatsappMessage}`, '_blank');
-        });
-
-
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Initialize animations on scroll
-        window.addEventListener('load', function () {
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            }, observerOptions);
-
-            // Observe all cards for animation
-            document.querySelectorAll('.card-hover, .service-card').forEach(card => {
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(20px)';
-                card.style.transition = 'all 0.6s ease';
-                observer.observe(card);
-            });
-        });
-
-        // Set minimum date to today for appointment booking
-        document.getElementById('preferredDate').min = new Date().toISOString().split('T')[0];
-
-        // Close modal when clicking outside
-        document.getElementById('partsModal').addEventListener('click', function (e) {
-            if (e.target === this) {
-                closePartsModal();
-            }
-        });
-        // WhatsApp number
-        const whatsappNumber = '919348148310';
-
-        // Show notification
-        function showNotification(message) {
+        // Notification function
+        function showNotification(message, type = 'success') {
             const notification = document.getElementById('notification');
             const notificationText = document.getElementById('notificationText');
 
             notificationText.textContent = message;
-            notification.classList.add('show');
+            notification.className = `notification ${type === 'success' ? 'bg-green-500' : 'bg-red-500'} show`;
 
             setTimeout(() => {
                 notification.classList.remove('show');
             }, 3000);
         }
 
-        // Send WhatsApp message for individual service
-        function sendServiceWhatsApp(serviceName, price, features) {
-            const currentTime = new Date().toLocaleString('en-IN', {
-                timeZone: 'Asia/Kolkata',
-                day: '2-digit',
-                month: '2-digit',
-                year: 'numeric',
-                hour: '2-digit',
-                minute: '2-digit'
-            });
+        // Initialize form listeners
+        function initializeFormListeners() {
+            // Parts form submission
+            const partsForm = document.getElementById('partsForm');
+            if (partsForm) {
+                partsForm.addEventListener('submit', function (e) {
+                    e.preventDefault();
 
-            const message = `🚗 *TVS Service Request* 🚗
+                    const name = document.getElementById('partCustomerName').value;
+                    const email = document.getElementById('partCustomerEmail').value;
+                    const phone = document.getElementById('partCustomerPhone').value;
+                    const vehicle = document.getElementById('partVehicleModel').value;
+                    const parts = document.getElementById('partRequiredParts').value;
+                    const message = document.getElementById('partMessage').value;
 
-📅 *Date & Time:* ${currentTime}
+                    // Create WhatsApp message for parts inquiry
+                    const whatsappMessage = encodeURIComponent(`🔧 PARTS INQUIRY REQUEST 🔧
 
-🔧 *Service Selected:* ${serviceName}
-💰 *Price:* ${price}
+📋 Customer Details:
+Name: ${name}
+Email: ${email}
+Phone: ${phone}
+Vehicle Model: ${vehicle || 'Not specified'}
+Required Parts: ${parts}
 
-✅ *Features:*
-${features.split(', ').map(feature => `• ${feature}`).join('\n')}
+Please provide availability and pricing for the requested parts.
 
-📞 *Customer wants to book this service*
+Thank you!`);
 
-Please contact for booking confirmation.
+                    // Send via WhatsApp
+                    window.open(`https://wa.me/+919348148310?text=${whatsappMessage}`, '_blank');
 
-#TVSService #VAS #ServiceConsumables`;
+                    closePartsModal();
+                });
+            }
 
-            const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
-            window.open(whatsappURL, '_blank');
+            // Updated Complaint Form Submission
+            const complaintForm = document.getElementById('complaintForm');
+            if (complaintForm) {
+                complaintForm.addEventListener('submit', function (e) {
+                    e.preventDefault();
+
+                    const vehicleRegNumber = document.getElementById('vehicleRegNumber').value;
+                    const mobile = document.getElementById('complaintMobile').value;
+                    const lastServiceDate = document.getElementById('lastServiceDate').value;
+                    const complaintDetails = document.getElementById('complaintDetails').value;
+
+                    const whatsappMessage = encodeURIComponent(`🚨 COMPLAINT SUBMISSION 🚨
+
+📋 Customer Details:
+Vehicle Registration: ${vehicleRegNumber}
+Mobile Number: ${mobile}
+Last Service Date: ${lastServiceDate}
+Complaint Details: ${complaintDetails}
+
+Please resolve this issue as soon as possible.
+
+Thank you!`);
+
+                    // Send via WhatsApp
+                    window.open(`https://wa.me/+919348148310?text=${whatsappMessage}`, '_blank');
+
+                    // Reset form
+                    complaintForm.reset();
+                    showNotification('Complaint submitted successfully via WhatsApp!');
+                });
+            }
+
+            // Updated Appointment Form Submission
+            const appointmentForm = document.getElementById('appointmentForm');
+            if (appointmentForm) {
+                appointmentForm.addEventListener('submit', function (e) {
+                    e.preventDefault();
+
+                    const customerName = document.getElementById('customerName').value;
+                    const phoneNumber = document.getElementById('phoneNumber').value;
+                    const bookingNumber = document.getElementById('bookingNumber').value;
+                    const frameNumber = document.getElementById('frameNumber').value;
+                    const vehicleModel = document.getElementById('vehicleModel').value;
+                    const serviceType = document.getElementById('serviceType').value;
+                    const preferredDate = document.getElementById('preferredDate').value;
+                    const message = document.getElementById('message').value;
+
+                    const whatsappMessage = encodeURIComponent(`📅 SERVICE APPOINTMENT BOOKING 📅
+
+📋 Customer Details:
+Name: ${customerName}
+Phone: ${phoneNumber}
+Booking Number: ${bookingNumber || 'Not provided'}
+Frame Number: ${frameNumber || 'Not provided'}
+Vehicle Model: ${vehicleModel || 'Not specified'}
+
+Please confirm my appointment and let me know the availability.
+
+Thank you!`);
+
+                    // Send via WhatsApp
+                    window.open(`https://wa.me/+919348148310?text=${whatsappMessage}`, '_blank');
+
+                    // Reset form
+                    appointmentForm.reset();
+                    showNotification('Appointment request sent successfully via WhatsApp!');
+                });
+            }
         }
-
-        // Handle individual service button clicks
-        document.querySelectorAll('.service-btn').forEach(button => {
-            button.addEventListener('click', function () {
-                const serviceName = this.getAttribute('data-service');
-                const price = this.getAttribute('data-price');
-                const features = this.getAttribute('data-features');
-                const btnText = this.querySelector('.btn-text');
-
-                // Visual feedback
-                const originalHTML = this.innerHTML;
-                this.innerHTML = '<i class="fas fa-paper-plane text-lg"></i> Sending...';
-                this.classList.add('sending');
-
-                // Send WhatsApp message
-                sendServiceWhatsApp(serviceName, price, features);
-
-                // Show notification
-                showNotification(`${serviceName} request sent to WhatsApp!`);
-
-                // Reset button after 2 seconds
-                setTimeout(() => {
-                    this.innerHTML = originalHTML;
-                    this.classList.remove('sending');
-                }, 2000);
-            });
-        });
-
-        // Complete package booking
-        document.getElementById('bookCompletePackage').addEventListener('click', function () {
-            const currentTime = new Date().toLocaleString('en-IN', {
-                timeZone: 'Asia/Kolkata',
-                day: '2-digit',
-                month: '2-digit',
-                year: 'numeric',
-                hour: '2-digit',
-                minute: '2-digit'
-            });
-
-            const completePackageMessage = `🚗 *TVS Complete VAS Package* 🚗
-
-📅 *Date & Time:* ${currentTime}
-
-🎯 *Package:* Complete Service Consumables Package
-💰 *Special Offer:* ₹171 per service
-
-📦 *Includes All Services:*
-• 4-Way Rust Protection
-• Brake Cleaner Pro
-• Battery Terminal Care
-• Engine Flush System
-• Helmet Deep Clean
-• Chain Maintenance Kit
-
-✨ *Customer wants to book the COMPLETE VAS PACKAGE*
-
-Please contact for booking confirmation and scheduling.
-
-#TVSService #CompletePackage #VAS #ServiceConsumables`;
-
-            const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(completePackageMessage)}`;
-
-            // Visual feedback
-            const originalHTML = this.innerHTML;
-            this.innerHTML = '<i class="fas fa-paper-plane text-2xl"></i> Sending...';
-            this.style.background = '#f59e0b';
-
-            window.open(whatsappURL, '_blank');
-            showNotification('Complete package request sent to WhatsApp!');
-
-            // Reset button
-            setTimeout(() => {
-                this.innerHTML = originalHTML;
-                this.style.background = 'linear-gradient(135deg, #1e40af, #dc2626)';
-            }, 3000);
-        });
     </script>
 </body>
 
