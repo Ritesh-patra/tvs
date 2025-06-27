@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $subject = "New Service Appointment Booking";
     $message = "
     <div style='font-family: Arial, sans-serif; font-size: 16px; line-height: 1.6; color: #333;'>
-        <h2 style='font-size: 22px; color: #d32f2f;'>New Service Appointment Details</h2>
+        <h2 style='font-size: 22px; color: #d32f2f;'>New Service Appointment Details (Khodasingh Branch )</h2>
         <p><strong>Full Name:</strong> {$fullName}</p>
         <p><strong>Email:</strong> " . ($email ? $email : 'Not provided') . "</p>
         <p><strong>Mobile Number:</strong> {$mobile}</p>

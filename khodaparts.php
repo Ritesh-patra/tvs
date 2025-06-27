@@ -16,7 +16,7 @@ $notes = $_POST['notes'] ?? '';
 // Create email body
 $body = "
 <div style='font-family: Arial, sans-serif; font-size: 16px; color: #333; line-height: 1.6;'>
-    <h2 style='font-size: 22px; color: #d32f2f;'>New Parts Inquiry Received</h2>
+    <h2 style='font-size: 22px; color: #d32f2f;'>New Parts Inquiry Received (Khodasingh Branch)</h2>
     <p><strong>Full Name:</strong> {$fullName}</p>
     <p><strong>Mobile:</strong> {$mobile}</p>
     <p><strong>Service Type:</strong> {$service}</p>

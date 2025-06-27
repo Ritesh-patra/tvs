@@ -334,14 +334,13 @@
 <body class="bg-tvs-cream font-poppins">
 
     <!-- Navigation -->
-    <!-- Navigation -->
     <nav class="bg-white shadow-lg fixed w-full top-0 z-50">
         <div class="max-w-7xl mx-auto px-4">
             <div class="flex justify-between items-center py-4">
                 <!-- Branch Name Instead of Logo -->
                 <div class="text-2xl font-bold text-tvs-red flex items-center gap-2">
                     <i class="fas fa-map-marker-alt text-tvs-red"></i>
-                    Aska Road Branch
+                    Khoda Singh Branch
                 </div>
 
                 <!-- Dropdown with "Select Branch" button -->
@@ -366,6 +365,7 @@
         </div>
     </nav>
 
+
     <!-- Mobile Image Section -->
     <section class="w-full h-[80vh] bg-no-repeat bg-cover bg-center md:hidden"
         style="background-image: url('images/mob-banner1.webp');">
@@ -380,7 +380,7 @@
     <section class="py-16 bg-gradient-to-br from-tvs-cream to-tvs-pink">
         <div class="container mx-auto px-4">
             <div class="text-center mb-12">
-                <h2 class="text-4xl font-bold text-tvs-blue mb-8">Discover All Services</h2>
+                <h2 class="text-4xl font-bold text-tvs-blue mb-8">Discover All Services <br> </h2>
 
                 <!-- Service Tabs -->
                 <div class="overflow-x-auto scrollbar-hide">
@@ -1162,6 +1162,7 @@
         </div>
     </div>
 
+
     <section class="py-16 bg-gradient-to-br from-red-50 to-tvs-pink">
         <div class="container mx-auto px-4">
             <div class="text-center mb-12">
@@ -1354,7 +1355,7 @@
                     <a href="tel:+919124569270"
                         class="bg-green-500 hover:bg-green-600 text-white px-10 py-4 rounded-2xl font-bold text-lg transition-all transform hover:scale-105 shadow-xl inline-block">
                         <i class="fas fa-phone mr-3"></i>
-                        Call +91 97774 40615
+                        Call +91 91245 69268
                     </a>
                 </div>
             </div>
@@ -1374,7 +1375,7 @@
                 <div class="card-hover bg-white p-8 rounded-2xl shadow-xl text-center">
                     <i class="fas fa-phone text-5xl text-tvs-blue mb-6"></i>
                     <h4 class="font-bold text-gray-800 mb-4 text-xl">Call Us</h4>
-                    <p class="text-tvs-blue font-bold text-2xl">+91 91245 69270</p>
+                    <p class="text-tvs-blue font-bold text-2xl">+91 91245 69268</p>
                     <p class="text-gray-600 text-lg">We're available 24/7</p>
                 </div>
 
@@ -1411,7 +1412,7 @@
                     <h4 class="text-2xl font-bold mb-6">Contact Info</h4>
                     <p class="text-gray-400 mb-4 text-lg"><i class="fas fa-map-marker-alt mr-3"></i>Aska Road |
                         Khodasingh Berhampur, Odisha</p>
-                    <p class="text-gray-400 mb-4 text-lg"><i class="fas fa-phone mr-3"></i>+91 91245 69270</p>
+                    <p class="text-gray-400 mb-4 text-lg"><i class="fas fa-phone mr-3"></i>+91 91245 69267</p>
                     <p class="text-gray-400 text-lg"><i class="fas fa-envelope mr-3"></i>tvsarya@gmail.com</p>
                 </div>
                 <div>
@@ -1439,7 +1440,7 @@
         <div class="flex items-center justify-center min-h-screen p-4">
             <div class="bg-white rounded-2xl p-6 max-w-sm w-full">
                 <h3 class="text-xl font-bold text-tvs-blue mb-4">Request Parts via Email</h3>
-                <form id="partsForm" action="parts.php" method="post" class="space-y-4">
+                <form id="partsForm" action="khodaparts.php" method="post" class="space-y-4">
                     <!-- Full Name -->
                     <div>
                         <label for="fullName" class="block text-sm font-semibold text-gray-700 mb-2">
@@ -1641,13 +1642,6 @@ ${name}
 
 
 
-        // WhatsApp Review Function
-        function openWhatsAppReview() {
-            const message = encodeURIComponent(`Hi! I would like to share my experience with your TVS service:
-
-Please let me know how you found our service and what we can improve.`);
-            window.open(`https://wa.me/918895037446?text=${message}`, '_blank');
-        }
 
         // WhatsApp Complaint Function
         document.getElementById('complaintForm').addEventListener('submit', function (e) {
@@ -1668,7 +1662,7 @@ Please let me know how you found our service and what we can improve.`);
 
 Please assist in resolving this issue as soon as possible. Thank you.`);
 
-            window.open(`https://wa.me/917205359871?text=${message}`, '_blank');
+            window.open(`https://wa.me/919853507192?text=${message}`, '_blank');
         });
 
         // Appointment Form Submission
@@ -1751,7 +1745,7 @@ Please let me know when the service slot is available.`);
             }
         });
         // WhatsApp number
-        const whatsappNumber = '917205359871';
+        const whatsappNumber = '919853507192';
 
 
 
@@ -1835,7 +1829,6 @@ Please contact for booking confirmation.
             document.getElementById("partsModal").classList.add("hidden");
         });
 
-
         let selectedRating = 0;
 
         function openReviewForm() {
@@ -1851,7 +1844,7 @@ Please contact for booking confirmation.
 
         function openWhatsAppReview() {
             const message = "Hi! I would like to share my experience with TVS Service. Please help me submit my review.";
-            const whatsappUrl = `https://wa.me/919348148310?text=${encodeURIComponent(message)}`;
+            const whatsappUrl = `https://wa.me/919124557410?text=${encodeURIComponent(message)}`;
             window.open(whatsappUrl, '_blank');
         }
 
@@ -1902,7 +1895,7 @@ Last Service Date: ${reviewData.lastServiceDate}
 Rating: ${'⭐'.repeat(reviewData.rating)} (${reviewData.rating}/5)
 Review: ${reviewData.review}`;
 
-            const whatsappUrl = `https://wa.me/919348148310?text=${encodeURIComponent(message)}`;
+            const whatsappUrl = `https://wa.me/919124557410?text=${encodeURIComponent(message)}`;
             // Uncomment the line below if you want to automatically open WhatsApp
             // window.open(whatsappUrl, '_blank');
         }
@@ -1974,7 +1967,7 @@ Review: ${reviewData.review}`;
             );
 
             // Replace with your number(s)
-            const whatsappNumber = '919348148310'; // format: countrycode+number, no spaces
+            const whatsappNumber = '919124557410'; // format: countrycode+number, no spaces
 
             // Open WhatsApp chat
             window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
@@ -1982,7 +1975,6 @@ Review: ${reviewData.review}`;
             // Optionally close modal
             closeReviewForm();
         }
-
 
     </script>
 </body>
